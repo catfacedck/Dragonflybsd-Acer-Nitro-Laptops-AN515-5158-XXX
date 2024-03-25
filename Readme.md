@@ -66,7 +66,7 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    View all the pci devices and their driver attachments by typing: pciconf -lvv|less
    No pci driver available is indicted by "none"
 
-   Ethernet (re0 or other) and audio (hdaa/hdacc) should have been detected.
+   Ethernet (re0 or other), mousepad (psm0), and audio (hdaa/hdacc) should have been detected.
    ```
 
 6) Install drangonflybsd from the USB stick assumping the entire 2nd drive is used. Follow the directions here:
@@ -81,8 +81,18 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    https://www.dragonflybsd.org/docs/handbook/Installation/#index3h1
 
    Check that the /etc/fstab file looks something like this. (Disk ID withh be different matching dmesg).
+   ```
+    serno/210602802831.s5a		/boot	ufs	rw	1	1
+    serno/210602802831.s5b		none	swap	sw	0	0
+    serno/210602802831.s5d		/	hammer2	rw	1	1
+    dummy /tmp tmpfs rw 0 0
+    dummy /var/tmp tmpfs rw 0 0
+    dummy /var/run tmpfs rw,-C 0 0
+    dummy /usr/obj tmpfs rw 0 0
+    proc /proc procfs rw 0 0
+   ```
    
-8) Provision Ethernet networking. Be sure to connect the RJ-45 Ethernet port on the laptop to a work/home router running DHCP.
+8) Provision Ethernet networking. Be sure to connect the RJ-45 Ethernet port on the laptop to a work/home router running DHCP using a suitable cable.
    ```
    Boot the laptop and login as root.
    At the command prompt type: ifconfig -a
@@ -105,12 +115,32 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
     pkg install bash zsh
     ```
 
-11) Provision Xorg. 
+11) Provision Xorg. /etc/sysctl.conf, /boot/loader.conf, and /etc/rc.conf must be modified.
     ```
-    /etc/sysctl.conf, /etc/rc.conf, /boot/loader.conf must be modified.
+    kern.evdev.rcpt_mask=3
+    hw.snd.default_unit=1
+
+    ```
+    /boot/loader.conf (the drive ID will be different matching dmesg)
+    ```
+    dm_load="YES"
+    nvmm_load="YES"
+    vfs.root.mountfrom="hammer2:serno/210602802831.s5d"
     ```
 
-12) Provision audio. The default audio device and 0db volume.
+  /etc/rc.conf
+  ```
+  hostname="dflybsd65snap"
+  dbus_enable="YES"
+  hald_enable="YES"
+  tmpfs_var_run="YES"
+  sendmail_enable="NONE"
+  powerd_enable="YES"
+  powerd_flags="-u 7 -r 0.2 -T 60"
+  ```
+
+13) Provision audio. The default audio device and 0db volume.
     ```
+    At the command prompt type: cat /dev/sndstat
 
     ```
