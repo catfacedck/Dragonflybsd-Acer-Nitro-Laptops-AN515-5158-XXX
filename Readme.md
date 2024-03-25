@@ -80,7 +80,7 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    ```
    https://www.dragonflybsd.org/docs/handbook/Installation/#index3h1
 
-   Check that the /etc/fstab file looks something like this. (Disk ID withh be different matching dmesg).
+   Check that the /etc/fstab file looks something like this. (drive ID will be different matching dmesg).
    ```
     serno/210602802831.s5a		/boot	ufs	rw	1	1
     serno/210602802831.s5b		none	swap	sw	0	0
@@ -119,9 +119,8 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
     ```
     kern.evdev.rcpt_mask=3
     hw.snd.default_unit=1
-
     ```
-    /boot/loader.conf (the drive ID will be different matching dmesg)
+    /boot/loader.conf (drive ID will be different matching dmesg)
     ```
     dm_load="YES"
     nvmm_load="YES"
@@ -142,5 +141,4 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
 13) Provision audio. The default audio device and 0db volume.
     ```
     At the command prompt type: cat /dev/sndstat
-
     ```
