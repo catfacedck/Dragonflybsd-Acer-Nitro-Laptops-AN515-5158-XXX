@@ -24,7 +24,7 @@ Note: This dragonfly installation was tested on Intel I5-12500 and Intel I7-1370
 
 # **_Step-by step intall procedure:_**
 
-Typically these laptops are delived with Windows 11 installed on an internal 500 GB or 1 TB nvme drive. For this install it is far easier to accomplish on a new 2nd drive without the worry of screwing up the base Windows 11 installation. _Caveat lector_
+Typically these laptops are delived with Windows 11 installed on an internal 500 GB or 1 TB nvme drive. For this install it is far easier to accomplish on a new 2nd drive without the worry of screwing up the base Windows 11 installation. _Caveat lector._
 
 However, in order to multiboot from the same or different drives one needs to use rEFind (https://www.rodsbooks.com/refind/).
 Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (and other) operating systems using rEFind.
@@ -85,6 +85,7 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
     serno/210602802831.s5a		/boot	ufs	rw	1	1
     serno/210602802831.s5b		none	swap	sw	0	0
     serno/210602802831.s5d		/	hammer2	rw	1	1
+    # Add these 5 lines yourself.
     dummy /tmp tmpfs rw 0 0
     dummy /var/tmp tmpfs rw 0 0
     dummy /var/run tmpfs rw,-C 0 0
