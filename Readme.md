@@ -56,10 +56,13 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
 5) If the boot is successful inspect the dmesg boot log. If unsuccessful go look for the trouble.
    ```
    Do not install the system.
+   
    Select: exit to shell and login as root.
    At the command prompt type: dmesg|less
+   
    Inspect the messages to ensure Ethernet was detected as well as the mousepad.
    One must have Ethernet and driver to continue with the installation.
+   
    View all the pci devices and their driver attachments by typing: pciconf -lvv|less
    No pci driver available is indicted by "none"
 
