@@ -11,7 +11,7 @@ These laptops typically come in a variety of hardware sku configurations:
   - Integrated Mediatek MT7921 WiFi or variants
   - Killer Ethernet (was Realtek now Intel)
   - Realtek and Nvidia Audio
-  - Two (2) nvme drive connectors and one (1) SATA drive connector - three (3) internel drives total.
+  - Internel - two (2) nvme drive connectors and one (1) SATA drive connector - three (3) internel drives total.
 
 What you will get after installation:
   - Working Ethernet based dragonflybsd system using scfb Xorg driver, 1920x1080 165 Hz screen, mousepad, USB wireless mouse support, audio, mutiple drives.
