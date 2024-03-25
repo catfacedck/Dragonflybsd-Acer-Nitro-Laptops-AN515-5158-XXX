@@ -29,6 +29,7 @@ Typically these laptops are delived with Windows 11 installed on an internal 500
 1) Prepare the laptop BIOS.
    ``` Press F2 to enter the BIOS.
        Turn off UEFI secure boot in the Advanced menu.
+       Press F10 to exit.
    ```
    
 2) Change the mousepad from iic to psm. To do so one must enter the BIOS advanced mode. Note planning to use the laptop mousepad? Skip this step.
