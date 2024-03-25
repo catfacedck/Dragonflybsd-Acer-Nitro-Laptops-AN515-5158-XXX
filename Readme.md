@@ -14,7 +14,7 @@ These laptops typically come in a variety of hardware sku configurations:
   - Two (2) nvme drive connectors and one (1) SATA drive connector - three (3) internel drives total.
 
 What you will get:
-  - Working Ethernet based dragonflybsd system using scfb Xorg driver, mousepad, USB support, audio, mutiple drives.
+  - Working Ethernet based dragonflybsd system using scfb Xorg driver, 1920x1080 165 Hz screen, mousepad, USB support, audio, mutiple drives.
 
 What does not work:
   - Intel integrated WiFi, Intel integrated Graphics (no drm-61-kmod -> no brightness/screen resolution control), Nvidia Graphics, suspend/sleep keys.
