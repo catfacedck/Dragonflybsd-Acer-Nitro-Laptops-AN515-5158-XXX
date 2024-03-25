@@ -33,7 +33,7 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    ```
        Press F2 to enter the BIOS menu when powering the laptop on.
        Turn off UEFI secure boot in the Advanced menu.
-       Enable boot menu choises (F12) - also in Advanced menu.
+       Enable boot menu choices (F12) - also in Advanced menu.
        Press F10 to exit.
    ```
    
@@ -49,7 +49,7 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
 
 4) Test that the BIOS changes and USB stick are working.
    ```
-     Plug in the USB stick and reboot the machine.
+     Plug in the USB stick and reboot the laptop.
      At power up when the keyboard lights flash, press F12.
      Select the USB stick from the menu to boot from it.
    ```
@@ -59,9 +59,10 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    Select: exit to shell.
    At the command prompt type: dmesg|less
    Inspect the messages to ensure Ethernet was detected as well as the mousepad.
-   Once can see all the pci devices and their driver attachments by typing: pciconf -lvv|less
-   No drive available is indicted by "none"
+   One must have Ethernet and driver to continue with the installation.
+   View all the pci devices and their driver attachments by typing: pciconf -lvv|less
+   No pci driver available is indicted by "none"
    ```
 
-6) Install drangonflybsd.
+6) Install drangonflybsd from the USB stick.
 
