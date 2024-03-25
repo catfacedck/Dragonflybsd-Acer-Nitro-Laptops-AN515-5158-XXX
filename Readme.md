@@ -62,6 +62,8 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    One must have Ethernet and driver to continue with the installation.
    View all the pci devices and their driver attachments by typing: pciconf -lvv|less
    No pci driver available is indicted by "none"
+
+   Ethernet (re0 or other) and audio (hdaa/hdacc) should have been detected.
    ```
 
 6) Install drangonflybsd from the USB stick assumping the entire 2nd drive is used. Follow the directions here:
@@ -71,10 +73,8 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    https://www.dragonflybsd.org/docs/handbook/Installation/#index6h1
    ```
    Once the blank 2nd drive has partitions for rFEind and dragonflybsd, continue with the installation
-   
    Do a manual installation using the entire disk.
    ```
    https://www.dragonflybsd.org/docs/handbook/Installation/#index3h1
    
-
 8) 
