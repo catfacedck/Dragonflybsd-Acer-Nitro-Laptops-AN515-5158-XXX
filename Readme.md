@@ -44,7 +44,7 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
 3) Go get the dragonflybsd image to copy onto a USB stick from here: https://mirror-master.dragonflybsd.org/snapshots/x86_64/
      ```
      Choose the DragonFly-x86_64-LATEST-BOOT.tar.bz2 file.
-     Decompress this and flash to a USB stick. On Windows one can use Rufus``` (https://rufus.ie/en/) ``` or dd from any Gnu/Linux or BSD system.
+     Decompress this and flash to a USB stick. On Windows one can use Rufus (https://rufus.ie/en/) or dd from any Gnu/Linux or BSD system.
      ```
 
 4) Test that the BIOS changes and USB stick are working.
@@ -79,6 +79,8 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    Do a manual installation using the entire disk.
    ```
    https://www.dragonflybsd.org/docs/handbook/Installation/#index3h1
+
+   Check that the /etc/fstab file looks something like this. (Disk ID withh be different matching dmesg).
    
 8) Provision Ethernet networking. Be sure to connect the RJ-45 Ethernet port on the laptop to a work/home router running DHCP.
    ```
@@ -103,12 +105,12 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
     pkg install bash zsh
     ```
 
-11) Provision Xorg.
+11) Provision Xorg. 
+    ```
+    /etc/sysctl.conf, /etc/rc.conf, /boot/loader.conf must be modified.
     ```
 
-    ```
-
-12) Provision audio.
+12) Provision audio. The default audio device and 0db volume.
     ```
 
     ```
