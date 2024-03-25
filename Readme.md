@@ -33,18 +33,35 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    ```
        Press F2 to enter the BIOS menu when powering the laptop on.
        Turn off UEFI secure boot in the Advanced menu.
+       Enable boot menu choises (F12) - also in Advanced menu.
        Press F10 to exit.
    ```
    
-2) Change the mousepad from iic to psm. To do so one must enter the BIOS advanced mode. Not planning to use the laptop mousepad? Skip this step.
+2) Change the laptop mousepad from iic to psm protocol. Mousepad iic protocal is not supported. To do so one must enter the BIOS advanced mode. Not planning to use the laptop mousepad? Skip this step.
    ```
    ```
    
 3) Go get the dragonflybsd image to copy onto a USB stick from here: https://mirror-master.dragonflybsd.org/snapshots/x86_64/
      ```
-     Choose the .img.bz2 file.
-     Decompress this and flash to a USB stick. On Windows one can use Rufus (https://rufus.ie/en/) or dd from ang Gnu/Linux or BSD system.
+     Choose the DragonFly-x86_64-LATEST-BOOT.tar.bz2 file.
+     Decompress this and flash to a USB stick. On Windows one can use Rufus (https://rufus.ie/en/) or dd from any Gnu/Linux or BSD system.
      ```
 
-4) 
+4) Test that the BIOS changes and USB stick are working.
+   ```
+     Plug in the USB stick and reboot the machine.
+     At power up when the keyboard lights flash, press F12.
+     Select the USB stick from the menu to boot from it.
+   ```
+5) If the boot is successful inspect the dmesg boot log. If unsuccessful go look for the trouble.
+   ```
+   Do not install the system.
+   Select: exit to shell.
+   At the command prompt type: dmesg|less
+   Inspect the messages to ensure Ethernet was detected as well as the mousepad.
+   Once can see all the pci devices and their driver attachments by typing: pciconf -lvv|less
+   No drive available is indicted by "none"
+   ```
+
+6) Install drangonflybsd.
 
