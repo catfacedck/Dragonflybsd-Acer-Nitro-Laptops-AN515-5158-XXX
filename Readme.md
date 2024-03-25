@@ -64,14 +64,17 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    No pci driver available is indicted by "none"
    ```
 
-6) Install drangonflybsd from the USB stick Assumping the entire 2nd drive is used. Follow the directions here:
+6) Install drangonflybsd from the USB stick assumping the entire 2nd drive is used. Follow the directions here:
    ```
    Setup rEFind and drive partitions.
+   ```
    https://www.dragonflybsd.org/docs/handbook/Installation/#index6h1
+   ```
    Once the blank 2nd drive has partitions for rFEind and dragonflybsd, continue with the installation
    
    Do a manual installation using the entire disk.
-   https://www.dragonflybsd.org/docs/handbook/Installation/#index3h1
    ```
+   https://www.dragonflybsd.org/docs/handbook/Installation/#index3h1
+   
 
-7)
+8) 
