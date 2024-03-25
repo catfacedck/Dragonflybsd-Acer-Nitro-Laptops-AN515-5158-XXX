@@ -14,7 +14,7 @@ These laptops typically come in a variety of hardware sku configurations:
   - Two (2) nvme drive connectors and one (1) SATA drive connector - three (3) internel drives total.
 
 What you will get after installation:
-  - Working Ethernet based dragonflybsd system using scfb Xorg driver, 1920x1080 165 Hz screen, mousepad, USB support, audio, mutiple drives.
+  - Working Ethernet based dragonflybsd system using scfb Xorg driver, 1920x1080 165 Hz screen, mousepad, USB wireless mouse support, audio, mutiple drives.
 
 What does not work:
   - Intel integrated WiFi, Intel integrated Graphics (no drm-61-kmod -> no brightness/screen resolution control), Nvidia Graphics, suspend/sleep keys.
@@ -80,4 +80,35 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    ```
    https://www.dragonflybsd.org/docs/handbook/Installation/#index3h1
    
-8) 
+8) Provision Ethernet networking. Be sure to connect the RJ-45 Ethernet port on the laptop to a work/home router running DHCP.
+   ```
+   Boot the laptop and login as root.
+   At the command prompt type: ifconfig -a
+
+   The pci Ethernet device should be shown (example here for re0). If not return to #5 above and look for the trouble.
+
+   At the command prompt type:
+   dhclient re0
+
+   This will assign an ip address from the router to the re0 interface and set up a static route.
+   ```
+
+9) Update package, dports, kernel source.
+    ```
+
+    ```
+
+10) Install common shells to test pkg:
+    ```
+    pkg install bash zsh
+    ```
+
+11) Provision Xorg.
+    ```
+
+    ```
+
+12) Provision audio.
+    ```
+
+    ```
