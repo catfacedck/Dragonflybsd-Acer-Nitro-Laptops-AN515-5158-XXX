@@ -356,7 +356,12 @@ Before proceeding further, make a USB flash rescue/recovery disk for the existin
     ```
     startxfce4
     ```
-    The xfce4 window manager will start and can be configured to suit.
+    The xfce4 window manager will start and can be configured to suit. Optionally add display manager (dm) for logins (slim). At the command promt type:
+    ```
+    echo slim_enable=yes >> /etc/rc.conf
+    ```
+
+    
 
     
 
