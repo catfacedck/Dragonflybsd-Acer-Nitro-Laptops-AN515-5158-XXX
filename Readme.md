@@ -350,6 +350,7 @@ Before proceeding further, make a USB flash rescue/recovery disk for the existin
     At the command prompt type:
     ```
     pkg install xfce
+    pkg install xfce4-screenshooter-plugin
     ```
     Xfce4 and i3 where tested on this hardware.
 
@@ -357,8 +358,8 @@ Before proceeding further, make a USB flash rescue/recovery disk for the existin
     ```
     startxfce4
     ```
-    The xfce4 window manager will start and can be configured to suit. 
-
+    The xfce4 window manager will start and can be configured to suit. xfce4 permits some provisioning of mouse actions. Consider using _moused_ in /etc/rc.conf for
+    the mousepad.
     
 
     
