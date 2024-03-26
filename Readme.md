@@ -66,7 +66,7 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    At the command prompt type: dmesg|less
    
    Inspect the messages to ensure Ethernet was detected as well as the mousepad.
-   One must have Ethernet its' driver to continue with the installation.
+   One must have Ethernet with the corresponding driver to continue with the installation.
    
    View all the pci devices and their driver attachments by typing: pciconf -lvv|less
    No pci driver available is indicted by "none"
