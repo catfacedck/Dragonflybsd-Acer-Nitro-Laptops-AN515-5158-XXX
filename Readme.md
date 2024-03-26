@@ -135,6 +135,7 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
     ```
     dm_load="YES"
     nvmm_load="YES"
+    vfs.root.mountfrom="hammer2:serno/210602802831.s5d"
     ```
 
   /etc/rc.conf
