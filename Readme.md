@@ -60,9 +60,10 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    ```
    
 6) If the boot is successful inspect the dmesg boot log. If unsuccessful go look for the trouble.
-   ```
-   Do not install the system.
    
+   Do not install the system.
+
+   ```
    Select: exit to shell and login as root.
    At the command prompt type: dmesg|less
    
@@ -82,8 +83,9 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    https://www.dragonflybsd.org/docs/handbook/Installation/#index6h1
    ```
    
-   Once the blank 2nd drive has partitions for rFEind and dragonflybsd, continue with the installation
+   Once the blank 2nd drive has partitions for rFEind and dragonflybsd, continue with the installation.
    Do a manual installation using the entire drive. Be sure to select the correct drive for the install!
+   
    ```
    https://www.dragonflybsd.org/docs/handbook/Installation/#index3h1
    ```
@@ -103,6 +105,7 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    ```
 
    Check the default filesystem mountpoints. At the command prompt type: mount
+   
    ```
     serno/210602802831.s5d on / (hammer2, local)
     devfs on /dev (devfs, nosymfollow, local)
