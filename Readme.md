@@ -44,6 +44,7 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    ```
    
 3) Go get the dragonflybsd image to copy onto a USB stick from here: https://mirror-master.dragonflybsd.org/snapshots/x86_64/
+   
    A snapshot is necessary to get the Ethernet (re0) and audio drivers.
      ```
      Choose the DragonFly-x86_64-LATEST-BOOT.tar.bz2 file.
@@ -83,7 +84,7 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    ```
    https://www.dragonflybsd.org/docs/handbook/Installation/#index3h1
 
-   Check that the /etc/fstab file looks something like this. (drive ID will be different matching dmesg).
+   After installation, check that the /etc/fstab file looks something like this. (drive ID will be different matching dmesg).
    ```
     serno/210602802831.s5a		/boot	ufs	rw	1	1
     serno/210602802831.s5b		none	swap	sw	0	0
@@ -101,7 +102,7 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    Boot the laptop and login as root.
    At the command prompt type: ifconfig -a
 
-   The pci Ethernet device should be shown (example here for re0). If not return to #5 above and look for the trouble.
+   The pci Ethernet device should be shown (example here for re0). If not return to #6 above and look for the trouble.
 
    At the command prompt type:
    dhclient re0
@@ -121,8 +122,13 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
 
 11) Provision Xorg. /etc/sysctl.conf, /boot/loader.conf, and /etc/rc.conf must be modified.
     ```
+    # Needed for keyboard input in Xorg.
     kern.evdev.rcpt_mask=3
+    # Switch the default sound to internal speakers.
     hw.snd.default_unit=1
+    # Set the 0db sound reference level if volume is too low - tune by experiment.
+    # hw.snd.vpc_0db=45
+
     ```
     /boot/loader.conf (drive ID will be different matching dmesg)
     ```
