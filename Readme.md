@@ -90,7 +90,7 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    https://www.dragonflybsd.org/docs/handbook/Installation/#index3h1
    ```
    
-8) After installation, check that the /etc/fstab file looks something like this. (drive ID will be different matching dmesg).
+8) After installation, check that the /etc/fstab file looks something like this. The drive ID will be different matching dmesg.
    
    ```
    serno/210602802831.s5a		/boot	ufs	rw	1	1
@@ -118,7 +118,7 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
     tmpfs on /var/run/shm (tmpfs, local)
   ```
 
-  One should see something similar with a different drive ID after following the _ manual installation using the entire drive_ instructions.
+  One should see something similar with a different drive ID after following the **_manual installation using the entire drive_** instructions.
 
 
 9) Provision Ethernet networking. Be sure to connect the RJ-45 Ethernet port on the laptop to a work/home router running DHCP using a suitable cable.
