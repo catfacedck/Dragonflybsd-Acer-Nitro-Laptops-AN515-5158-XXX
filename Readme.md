@@ -120,7 +120,7 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
     pkg install bash zsh
     ```
 
-11) Provision Xorg. /etc/sysctl.conf, /boot/loader.conf, and /etc/rc.conf must be modified.
+11) Provision Xorg. Add the following content to /etc/sysctl.conf, /boot/loader.conf, and /etc/rc.conf .
     ```
     # Needed for keyboard input in Xorg.
     kern.evdev.rcpt_mask=3
@@ -134,18 +134,20 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
     ```
     dm_load="YES"
     nvmm_load="YES"
-    vfs.root.mountfrom="hammer2:serno/210602802831.s5d"
     ```
 
   /etc/rc.conf
   ```
   hostname="dflybsd65snap"
+  clear_tmp_enable="YES"
   dbus_enable="YES"
   hald_enable="YES"
   tmpfs_var_run="YES"
   sendmail_enable="NONE"
   powerd_enable="YES"
-  powerd_flags="-u 7 -r 0.2 -T 60"
+  powerd_flags="-a hiadaptive -b adaptive"
+  ifconfig_re0="dhcp"
+ 
   ```
 
 13) Provision audio. The default audio device and 0db volume.
