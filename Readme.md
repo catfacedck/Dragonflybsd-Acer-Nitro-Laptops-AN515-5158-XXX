@@ -31,10 +31,12 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
 
 1) Prepare the laptop BIOS.
    ```
-       Press F2 to enter the BIOS menu when powering the laptop on.
-       Turn off UEFI secure boot in the Advanced menu.
-       Enable boot menu choices (F12) - also in Advanced menu.
-       Press F10 to exit.
+       a) Press F2 to enter the BIOS menu when powering the laptop on.
+       b) In the MAIN menu:  F12 Boot Menu        Enabled
+       c) In the BOOT menu:
+                             Boot Mode            UEFI
+                             Secure Boot          Disabled
+       d) Press F10 to exit.
    ```
    
 2) Change the laptop mousepad from iic to psm protocol. Mousepad iic protocal is not supported. To do so one must enter the BIOS advanced mode. Not planning to use the laptop mousepad? Skip this step.
