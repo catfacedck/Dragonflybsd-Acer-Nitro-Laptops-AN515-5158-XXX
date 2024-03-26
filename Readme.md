@@ -253,7 +253,7 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
     hald_enable="YES"
     tmpfs_var_run="YES"
     sendmail_enable="NONE"
-    # Try some power flags.
+    # Try some power flags. Must be tuned depending on laptop usage.
     powerd_enable="YES"
     powerd_flags="-u 7 -r 0.2 -T 60"
     # DHCP by default on interface re0.
