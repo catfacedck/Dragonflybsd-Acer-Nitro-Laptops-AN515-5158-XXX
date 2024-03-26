@@ -17,13 +17,14 @@ These laptops typically come in a variety of hardware sku configurations:
   - Integrated camera
   - Internel - two (2) nvme drive connectors and one (1) SATA drive connector - three (3) internel drives total.
 
-What you will get after installation:
+**What you will get after installation:**
   - Ethernet network based dragonflybsd system using scfb Xorg driver, 1920x1080 165 Hz screen, mousepad, USB wireless mouse support, audio, mutiple drives, USB.
 
-What does not work:
+**What does not work:**
   - Intel integrated WiFi, Intel integrated Graphics (no drm-61-kmod -> no brightness/screen resolution control), Nvidia Graphics, suspend/sleep keys, camera.
 
-Note: This dragonfly installation was tested on Intel I5-12500 and Intel I7-13700 systems with Integrated Intel Graphics/Wifi, Nvidia 3050/4050 Graphics, and Killer Ethernet.
+>[!Note]
+>This dragonfly installation was tested on Intel I5-12500 and Intel I7-13700 systems with Integrated Intel Graphics/Wifi, Nvidia 3050/4050 Graphics, and Killer Ethernet.
   
 
 # **_Step-by step intall procedure:_**
@@ -31,9 +32,11 @@ Note: This dragonfly installation was tested on Intel I5-12500 and Intel I7-1370
 Typically these laptops are delived with Windows 11 installed on an internal 500 GB or 1 TB nvme drive. For this install it is far easier to accomplish on a new 2nd drive without the worry of screwing up the base Windows 11 installation. _Caveat lector._
 
 However, in order to multiboot from the same or different drives one needs to use rEFind (https://www.rodsbooks.com/refind/).
-Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (and other) operating systems using rEFind.
+Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with dragonfly (and other) operating systems using rEFind.
 
-Before proceeding further, make a USB flash rescue/recovery disk for the existing drive 1 operating system, e.g. Windows 11, Ubuntu, Redhat, etc. Should rEFind and/or boot troubles arise, it will save much time.
+>[!Caution]
+>Before proceeding further, prepare a USB flash rescue/recovery disk for the existing drive 1 operating system, e.g. Windows 11, Ubuntu, Redhat, etc. Should rEFind 
+ and/or boot troubles arise, this will save much time and allow system recovery. Recommend installing rEFind itself on a second USB flash for recovery purposes.
 
 1) Prepare the laptop BIOS.
    ```
@@ -209,7 +212,7 @@ Before proceeding further, make a USB flash rescue/recovery disk for the existin
     ```
     This creates the entire kernel and userland source tree /usr/src needed for development activities.
 
-    Refer to the dragonflybsd web portal for instructions to build from applications dports and build custom kernels.
+    Refer to the dragonflybsd web portal for instructions to build applications from dports and build custom kernels.
    
     https://www.dragonflybsd.org/docs/howtos/HowToDPorts/
    
@@ -368,7 +371,9 @@ Before proceeding further, make a USB flash rescue/recovery disk for the existin
     ![Screenshot_elephant](https://github.com/catfacedck/Dragonflybsd-on-Acer-Nitro-Laptop-AN515-51-XXX/assets/42676711/e7455ab5-352c-427b-8193-e0bb13a16dfc)
 
 
-    14) Todo: camera for work teleconferencing. Oracle Java for EDA tools (AMD/Xilinx, Intel/Altera, Synopsys, Cadence, etc.) WiFi and drm are *_huge_* jobs likely to 	require large chunks of code from Openbsd and/or Freebsd.
+>[!Note]
+> Todo: camera for work teleconferencing. Oracle Java for EDA tools (AMD/Xilinx, Intel/Altera, Synopsys, Cadence, Siemens, etc.)
+> WiFi and drm are *_huge_* jobs likely to require large chunks of code from Openbsd and/or Freebsd.
 
     
 
