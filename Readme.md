@@ -206,11 +206,12 @@ Before proceeding further, make a USB flash rescue/recovery disk for the existin
     This creates the entire kernel and userland source tree /usr/src needed for development activities.
 
     Refer to the dragonflybsd web portal for instructions to build from applications dports and build custom kernels.
+   
     https://www.dragonflybsd.org/docs/howtos/HowToDPorts/
    
     https://www.dragonflybsd.org/docs/handbook/ConfigureKernel/
 
-10) Provision Xorg. Add the following content to /etc/sysctl.conf, /boot/loader.conf, and /etc/rc.conf .
+11) Provision Xorg. Add the following content to /etc/sysctl.conf, /boot/loader.conf, and /etc/rc.conf .
 
     /etc/sysctl.conf
     ```
@@ -242,7 +243,7 @@ Before proceeding further, make a USB flash rescue/recovery disk for the existin
     sendmail_enable="NONE"
     # Try some power flags.
     powerd_enable="YES"
-    powerd_flags="-a hiadaptive -b adaptive"
+    powerd_flags="-u 7 -r 0.2 -T 60"
     # DHCP by default on interface re0.
     ifconfig_re0="dhcp"
  
@@ -264,7 +265,7 @@ Before proceeding further, make a USB flash rescue/recovery disk for the existin
     At the command prompt type:
     
     ```
-    cd /usr/dports/www/x11-fonts/noto
+    cd /usr/dports/x11-fonts/noto
     make install
     ```
 
@@ -285,7 +286,7 @@ Before proceeding further, make a USB flash rescue/recovery disk for the existin
 
 
 
-11) Provision audio and check the default audio device.
+12) Provision audio and check the default audio device.
 
     At the command prompt type:
 
@@ -311,9 +312,9 @@ Before proceeding further, make a USB flash rescue/recovery disk for the existin
     Mixer pcm      is currently set to 100:100
     Mixer ogain    is currently set to 100:100
     ```
-    This verifies the audio volume and other parameters can be set.
+    This shows the audio volume and other parameters which can be set.
     
-12) Provision a user and install xfce4 window manager. At the command prompt type:
+13) Provision a user and install xfce4 window manager. At the command prompt type:
     ```
     adduser
 	Username: elephant
@@ -350,16 +351,13 @@ Before proceeding further, make a USB flash rescue/recovery disk for the existin
     ```
     pkg install xfce
     ```
-    Xfce4, bspwm, and i3 where tested on this hardware.
+    Xfce4 and i3 where tested on this hardware.
 
     Logout from the session. Login again as user "elephant". At the command prompt type:
     ```
     startxfce4
     ```
-    The xfce4 window manager will start and can be configured to suit. Optionally add display manager (dm) for logins (slim). At the command promt type:
-    ```
-    echo slim_enable=yes >> /etc/rc.conf
-    ```
+    The xfce4 window manager will start and can be configured to suit. 
 
     
 
