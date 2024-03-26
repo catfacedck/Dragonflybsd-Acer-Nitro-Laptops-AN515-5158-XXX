@@ -36,7 +36,7 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
 
 >[!Caution]
 >Before proceeding further, prepare a USB flash rescue/recovery disk for the existing drive 1 operating system, e.g. Windows 11, Ubuntu, Redhat, etc. Should rEFind 
- and/or boot troubles arise, this will save much time and allow system recovery. Recommend installing rEFind itself on a second USB flash for recovery purposes.
+ and/or boot troubles arise, this will save much time and allow system recovery. rEFind itself can be installed on a second USB flash for recovery purposes.
 
 1) Prepare the laptop BIOS.
    ```
@@ -50,12 +50,12 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
    
 2) Change the laptop mousepad from iic to psm protocol. Mousepad iic protocal is not supported. To do so one must enter the BIOS advanced mode. Not planning to use the laptop mousepad? Skip this step.
    ```
-    press Fn+Tab three times in the BIOS. Reboot the laptop.
-    press F4, 4, R, F, V, F5, 5, T, G, B, F6, 6, Y, H, N while the laptop is turned off.
-    Hold Fn+Tab while starting the computer, before entering the BIOS.
+    a) press Fn+Tab three times in the BIOS. Reboot the laptop.
+    b) press F4, 4, R, F, V, F5, 5, T, G, B, F6, 6, Y, H, N while the laptop is turned off.
+    c) Hold Fn+Tab while starting the computer, before entering the BIOS.
    ```
    
-3) Go get the dragonflybsd image to copy onto a USB stick from here: https://mirror-master.dragonflybsd.org/snapshots/x86_64/
+3) Go get the dragonflybsd image to copy onto a USB flash from here: https://mirror-master.dragonflybsd.org/snapshots/x86_64/
    
    On Windows one can use Rufus (https://rufus.ie/en/) or dd from any Gnu/Linux or BSD system to flash the USB stick.
    A snapshot is necessary to get the Ethernet (re0) and audio drivers.
@@ -82,8 +82,10 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
    ```
    dmesg|less
    ```
-   Inspect the messages to ensure Ethernet was detected as well as the mousepad and audio. 
-   One must have Ethernet with the corresponding driver to continue with the installation.
+   
+   >[!Note]
+   > Inspect the messages to ensure Ethernet was detected as well as the mousepad and audio. One must have Ethernet with the corresponding driver to continue with the 
+    installation.
    
    View all the pci devices and their driver attachments. The Ethernet hardware is attached to the pci bus. At the command prompt type:
    ```
