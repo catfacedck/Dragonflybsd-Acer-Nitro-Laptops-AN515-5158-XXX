@@ -44,18 +44,19 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    ```
    
 3) Go get the dragonflybsd image to copy onto a USB stick from here: https://mirror-master.dragonflybsd.org/snapshots/x86_64/
+   A snapshot is necessary to get the Ethernet (re0) and audio drivers.
      ```
      Choose the DragonFly-x86_64-LATEST-BOOT.tar.bz2 file.
      Decompress this and flash to a USB stick. On Windows one can use Rufus (https://rufus.ie/en/) or dd from any Gnu/Linux or BSD system.
      ```
 
-4) Test that the BIOS changes and USB stick are working.
+5) Test that the BIOS changes and USB stick are working.
    ```
      Plug in the USB stick and reboot the laptop.
      At power up when the keyboard lights flash, press F12.
      Select the USB stick from the menu to boot from it.
    ```
-5) If the boot is successful inspect the dmesg boot log. If unsuccessful go look for the trouble.
+6) If the boot is successful inspect the dmesg boot log. If unsuccessful go look for the trouble.
    ```
    Do not install the system.
    
@@ -71,7 +72,7 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    Ethernet (re0 or other), mousepad (psm0), and audio (hdaa/hdacc) should have been detected.
    ```
 
-6) Install drangonflybsd from the USB stick assumping the entire 2nd drive is used. Follow the directions here:
+7) Install drangonflybsd from the USB stick assumping the entire 2nd drive is used. Follow the directions here:
    ```
    Setup rEFind and drive partitions.
    ```
