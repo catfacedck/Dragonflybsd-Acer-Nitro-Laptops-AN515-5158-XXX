@@ -122,6 +122,8 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
     ```
 
 11) Provision Xorg. Add the following content to /etc/sysctl.conf, /boot/loader.conf, and /etc/rc.conf .
+
+    /etc/sysctl.conf
     ```
     # Needed for keyboard input in Xorg.
     kern.evdev.rcpt_mask=3
@@ -131,28 +133,38 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
     # hw.snd.vpc_0db=45
 
     ```
-    /boot/loader.conf (drive ID will be different matching dmesg)
+    /boot/loader.conf Line 3 drive ID will be different matching dmesg; this was added during installation.
     ```
     dm_load="YES"
     nvmm_load="YES"
     vfs.root.mountfrom="hammer2:serno/210602802831.s5d"
     ```
 
-  /etc/rc.conf
-  ```
-  hostname="dflybsd65snap"
-  clear_tmp_enable="YES"
-  dbus_enable="YES"
-  hald_enable="YES"
-  tmpfs_var_run="YES"
-  sendmail_enable="NONE"
-  powerd_enable="YES"
-  powerd_flags="-a hiadaptive -b adaptive"
-  ifconfig_re0="dhcp"
+    /etc/rc.conf
+    ```
+    hostname="dflybsd65snap"
+    clear_tmp_enable="YES"
+    dbus_enable="YES"
+    hald_enable="YES"
+    tmpfs_var_run="YES"
+    sendmail_enable="NONE"
+    powerd_enable="YES"
+    powerd_flags="-a hiadaptive -b adaptive"
+    ifconfig_re0="dhcp"
  
   ```
+
+12) Provision audio.
 
 13) Provision audio. The default audio device and 0db volume.
     ```
     At the command prompt type: cat /dev/sndstat
+
+    Installed devices:
+    pcm0: <NVIDIA (0x00a0) (HDMI/DP 8ch)> (play)
+    pcm1: <Realtek (0x0287) (Internal Analog Speaker)> (play) default
+    pcm2: <Realtek (0x0287) (Right Analog Headphones)> (play)
+
     ```
+
+    This verifies that the audio devices were detected and have drivers attached. Internel speakers set as default in /etc/sysctl.conf above.
