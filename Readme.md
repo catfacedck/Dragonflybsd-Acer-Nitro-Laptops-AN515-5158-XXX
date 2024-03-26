@@ -341,6 +341,22 @@ Before proceeding further, make a USB flash rescue/recovery disk for the existin
 	OK? (yes/no): yes
     ```
 
+    Ensure that user "elephant" has been added to the video and wheel groups in the /etc/group file.
+
+    At the command prompt type:
+    ```
+    pkg install xfce
+    ```
+    Xfce4, bspwm, and i3 where tested on this hardware.
+
+    Logout from the session. Login again as user "elephant". At the command prompt type:
+    ```
+    startxfce4
+    ```
+    The xfce4 window manager will start and can be configured to suit.
+
+    
+
     
     
     
