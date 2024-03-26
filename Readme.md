@@ -87,23 +87,39 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
 
    After installation, check that the /etc/fstab file looks something like this. (drive ID will be different matching dmesg).
    ```
-    serno/210602802831.s5a		/boot	ufs	rw	1	1
-    serno/210602802831.s5b		none	swap	sw	0	0
-    serno/210602802831.s5d		/	hammer2	rw	1	1
-    # Add these 5 lines yourself.
-    dummy /tmp tmpfs rw 0 0
-    dummy /var/tmp tmpfs rw 0 0
-    dummy /var/run tmpfs rw,-C 0 0
-    dummy /usr/obj tmpfs rw 0 0
-    proc /proc procfs rw 0 0
+   serno/210602802831.s5a		/boot	ufs	rw	1	1
+   serno/210602802831.s5b		none	swap	sw	0	0
+   serno/210602802831.s5d		/	hammer2	rw	1	1
+   # Add these 5 lines yourself.
+   dummy /tmp tmpfs rw 0 0
+   dummy /var/tmp tmpfs rw 0 0
+   dummy /var/run tmpfs rw,-C 0 0
+   dummy /usr/obj tmpfs rw 0 0
+   proc /proc procfs rw 0 0
    ```
-   
-8) Provision Ethernet networking. Be sure to connect the RJ-45 Ethernet port on the laptop to a work/home router running DHCP using a suitable cable.
+
+   Check the default filesystem mountpoints At the command prompt type: mount
+   ```
+    serno/210602802831.s5d on / (hammer2, local)
+    devfs on /dev (devfs, nosymfollow, local)
+    /dev/serno/210602802831.s5a on /boot (ufs, local)
+    tmpfs on /tmp (tmpfs, local)
+    tmpfs on /var/tmp (tmpfs, local)
+    tmpfs on /var/run (tmpfs, local)
+    tmpfs on /usr/obj (tmpfs, local)
+    procfs on /proc (procfs, local)
+    tmpfs on /var/run/shm (tmpfs, local)
+
+  ```
+   One should see something similar with a different drive ID after following the _ manual installation using the entire drive_ instructions.
+
+
+9) Provision Ethernet networking. Be sure to connect the RJ-45 Ethernet port on the laptop to a work/home router running DHCP using a suitable cable.
    ```
    Boot the laptop and login as root.
    At the command prompt type: ifconfig -a
 
-   The pci Ethernet device should be shown (example here for re0). If not return to #6 above and look for the trouble.
+   The pci Ethernet device should be shown (example here for re0). If not return to #5 above and look for the trouble.
 
    At the command prompt type:
    dhclient re0
@@ -111,17 +127,17 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    This will assign an ip address from the router to the re0 interface and set up a static route.
    ```
 
-9) Update package, dports, kernel source.
+10) Update package, dports, kernel source.
     ```
 
     ```
 
-10) Install common shells to test pkg:
+11) Install common shells to test pkg:
     ```
     pkg install bash zsh
     ```
 
-11) Provision Xorg. Add the following content to /etc/sysctl.conf, /boot/loader.conf, and /etc/rc.conf .
+12) Provision Xorg. Add the following content to /etc/sysctl.conf, /boot/loader.conf, and /etc/rc.conf .
 
     /etc/sysctl.conf
     ```
@@ -133,7 +149,9 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
     # hw.snd.vpc_0db=45
 
     ```
-    /boot/loader.conf Line 3 drive ID will be different matching dmesg; this was added during installation.
+    /boot/loader.conf
+
+    Line 3 drive ID will be different matching dmesg; this was added during installation.
     ```
     dm_load="YES"
     nvmm_load="YES"
@@ -152,13 +170,12 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
     powerd_flags="-a hiadaptive -b adaptive"
     ifconfig_re0="dhcp"
  
-  ```
-
-12) Provision audio. The default audio device and 0db volume.
-
     ```
-    At the command prompt type: cat /dev/sndstat
 
+13) Provision audio and check the default audio device.
+
+    At the command prompt type: cat /dev/sndstat
+    ```
     Installed devices:
     pcm0: <NVIDIA (0x00a0) (HDMI/DP 8ch)> (play)
     pcm1: <Realtek (0x0287) (Internal Analog Speaker)> (play) default
@@ -166,4 +183,4 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
 
     ```
 
-    This verifies that the audio devices were detected and have drivers attached. Internel speakers set as default in /etc/sysctl.conf above.
+    This verifies that the audio devices were detected and have drivers attached. Internel speakers set as default as shown in /etc/sysctl.conf above.
