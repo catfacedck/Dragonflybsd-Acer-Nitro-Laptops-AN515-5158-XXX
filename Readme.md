@@ -349,14 +349,14 @@ Before proceeding further, make a USB flash rescue/recovery disk for the existin
 	OK? (yes/no): yes
     ```
 
-    Ensure that user "elephant" has been added to the video and wheel groups in the /etc/group file.
+    Ensure that user "elephant" has been added to the video and wheel groups in the /etc/group file (video for Xorg, wheel for root access).
 
     At the command prompt type:
     ```
     pkg install xfce
     pkg install xfce4-screenshooter-plugin
     ```
-    Xfce4 and i3 where tested on this hardware.
+    The _screenshooter-plugin_ allows screenshots. Xfce4 and i3 window managers were tested on this hardware.
 
     Logout from the session. Login again as user "elephant". At the command prompt type:
     ```
@@ -366,6 +366,9 @@ Before proceeding further, make a USB flash rescue/recovery disk for the existin
     the mousepad.
 
     ![Screenshot_elephant](https://github.com/catfacedck/Dragonflybsd-on-Acer-Nitro-Laptop-AN515-51-XXX/assets/42676711/e7455ab5-352c-427b-8193-e0bb13a16dfc)
+
+
+    14) Todo: camera for work teleconferencing. Oracle Java for EDA tools (AMD/Xilinx, Intel/Altera, Synopsys, Cadence, etc.) WiFi and drm are *_huge_* jobs likely to 	require large chunks of code from Openbsd and/or Freebsd.
 
     
 
