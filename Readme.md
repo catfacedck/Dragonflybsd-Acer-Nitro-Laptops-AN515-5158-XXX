@@ -282,7 +282,7 @@ Before proceeding further, make a USB flash rescue/recovery disk for the existin
 
 
 
-12) Provision audio and check the default audio device.
+11) Provision audio and check the default audio device.
 
     At the command prompt type:
 
@@ -309,4 +309,39 @@ Before proceeding further, make a USB flash rescue/recovery disk for the existin
     Mixer ogain    is currently set to 100:100
     ```
     This verifies the audio volume and other parameters can be set.
+    
+12) Provision a user and install xfce4 window manager. At the command prompt type:
+    ```
+    adduser
+	Username: elephant
+	Full name:             
+	Uid (Leave empty for default): 
+	Login group [elephant]: 
+	Login group is elephant. Invite elephant into other groups? []: video wheel
+	Login class [default]: 
+	Shell (sh csh tcsh git-shell bash rbash zsh rzsh nologin) [sh]: zsh
+	Home directory [/home/elephant]: 
+	Home directory permissions (Leave empty for default): 
+	Use password-based authentication? [yes]: 
+	Use an empty password? (yes/no) [no]: 
+	Use a random password? (yes/no) [no]: 
+	Enter password: 
+	Enter password again: 
+	Lock out the account after creation? [no]: 
+	Username   : elephant
+	Password   : *****
+	Full Name  : 
+	Uid        : 1002
+	Class      : 
+	Groups     : elephant video wheel
+	Home       : /home/elephant
+	Home Mode  : 
+	Shell      : /usr/local/bin/zsh
+	Locked     : no
+	OK? (yes/no): yes
+    ```
+
+    
+    
+    
     
