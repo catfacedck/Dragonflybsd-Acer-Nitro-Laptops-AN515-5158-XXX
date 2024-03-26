@@ -29,6 +29,8 @@ Typically these laptops are delived with Windows 11 installed on an internal 500
 However, in order to multiboot from the same or different drives one needs to use rEFind (https://www.rodsbooks.com/refind/).
 Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (and other) operating systems using rEFind.
 
+Before proceeding further, make a USB flash rescue/recovery disk for the existing drive 1 operating system, e.g. Windows 11, Ubuntu, Redhat, etc. Should rEFind and/or boot troubles arise, it will save much time.
+
 1) Prepare the laptop BIOS.
    ```
        a) Press F2 to enter the BIOS menu when powering the laptop on.
@@ -70,10 +72,10 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    ```
    dmesg|less
    ```
-   Inspect the messages to ensure Ethernet was detected as well as the mousepad.
+   Inspect the messages to ensure Ethernet was detected as well as the mousepad and audio. 
    One must have Ethernet with the corresponding driver to continue with the installation.
    
-   View all the pci devices and their driver attachments. At the command prompt type:
+   View all the pci devices and their driver attachments. The Ethernet hardware is attached to the pci bus. At the command prompt type:
    ```
    pciconf -lvv|less
    ```
@@ -82,7 +84,7 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    Ethernet (re0 or other), mousepad (psm0), and audio (hdaa/hdacc) should have been detected.
    
 
-7) Install drangonflybsd from the USB stick assumping the entire 2nd drive is used. Follow the directions here:
+6) Install drangonflybsd from the USB stick assumping the entire 2nd drive is used. Follow the directions here:
    
    Setup rEFind and drive partitions.
    ```
@@ -96,7 +98,7 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    https://www.dragonflybsd.org/docs/handbook/Installation/#index3h1
    ```
    
-8) After installation, check that the /etc/fstab file looks something like this. The drive ID will be different matching dmesg.
+7) After installation, check that the /etc/fstab file looks something like this. The drive ID will be different matching dmesg.
    
    ```
    serno/210602802831.s5a		/boot	ufs	rw	1	1
@@ -131,7 +133,7 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    When the keys flash select F12 for the rEFind boot menu. Select dragonflybsd (no icon yet).
 
 
-9) Provision Ethernet networking. Be sure to connect the RJ-45 Ethernet port on the laptop to a work/home router running DHCP using a suitable cable.
+8) Provision Ethernet networking. Be sure to connect the RJ-45 Ethernet port on the laptop to a work/home router running DHCP using a suitable cable.
 
    At the command prompt type:
    ```
@@ -143,30 +145,69 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    At the command prompt type:
    ```
    dhclient re0
+   ifconfig -a
    ```
 
-   This will assign an ip address from the router to the re0 interface and set up a static route. At the command prompt type:
+   This will assign an ip address from the router to the re0 interface and set up a static route.
+   ```
+     re0: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> metric 0 mtu 1500
+	 options=1b<RXCSUM,TXCSUM,VLAN_MTU,VLAN_HWTAGGING>
+	 ether 40:c2:ba:09:29:6b
+     inet6 fe80::42c2:baff:fe09:296b%re0 prefixlen 64 scopeid 0x1
+	 inet 192.168.0.101 netmask 0xffffff00 broadcast 192.168.0.255
+	 media: Ethernet autoselect (100baseTX <full-duplex>)
+	 status: active
+   ```
+
+   At the command prompt type:
    ```
    netstat -nr
    ```
-   The re0 interface should be configured.
+   ```
+   Routing tables
 
-10) Update package, dports, kernel source.
+   Internet:
+   Destination        Gateway            Flags    Refs      Use  Netif Expire
+   Default            192.168.0.1        UGSc        2        4    re0       
+   127.0.0.1          127.0.0.1          UH          0        0    lo0       
+   192.168.0          link#1             UC          1        0    re0       
+   192.168.0.1        64:20:e0:19:75:28  UHLW        3        0    re0   1198
+
+   ```
+   The re0 interface should be configured with a static route.
+
+9) Provision package, dports, kernel source.
 
     At the command prompt type:
 
     ```
     cd /usr
-    
+    make pkg-bootstrap
     ```
-
-11) Install common shells to test the pkg mechanism.
+    If up-to-date an error message will say "already exists". Ignore it. Test the pkg mechanism by installing some common shells which should access over the Internet     and install them.
 
     ```
     pkg install bash zsh
     ```
 
-12) Provision Xorg. Add the following content to /etc/sysctl.conf, /boot/loader.conf, and /etc/rc.conf .
+    Setup dports.
+    ```
+    make dports-create-shallow
+    ```
+    This creates dports in /usr for later use.
+
+    Get the kernel source files.
+    ```
+    make src-create-shallow
+    ```
+    This creates the entire kernel and userland source tree /usr/src needed for development activities.
+
+    Refer to the dragonflybsd web portal for instructions to build from applications dports and build custom kernels.
+    https://www.dragonflybsd.org/docs/howtos/HowToDPorts/
+   
+    https://www.dragonflybsd.org/docs/handbook/ConfigureKernel/
+
+11) Provision Xorg. Add the following content to /etc/sysctl.conf, /boot/loader.conf, and /etc/rc.conf .
 
     /etc/sysctl.conf
     ```
@@ -241,7 +282,7 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
 
 
 
-14) Provision audio and check the default audio device.
+12) Provision audio and check the default audio device.
 
     At the command prompt type:
 
