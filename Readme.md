@@ -58,6 +58,7 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
      At power up when the keyboard lights flash, press F12.
      Select the USB stick from the menu to boot from it.
    ```
+   
 6) If the boot is successful inspect the dmesg boot log. If unsuccessful go look for the trouble.
    ```
    Do not install the system.
@@ -80,6 +81,7 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    ```
    https://www.dragonflybsd.org/docs/handbook/Installation/#index6h1
    ```
+   
    Once the blank 2nd drive has partitions for rFEind and dragonflybsd, continue with the installation
    Do a manual installation using the entire drive. Be sure to select the correct drive for the install!
    ```
@@ -87,6 +89,7 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    ```
    
    After installation, check that the /etc/fstab file looks something like this. (drive ID will be different matching dmesg).
+   
    ```
    serno/210602802831.s5a		/boot	ufs	rw	1	1
    serno/210602802831.s5b		none	swap	sw	0	0
