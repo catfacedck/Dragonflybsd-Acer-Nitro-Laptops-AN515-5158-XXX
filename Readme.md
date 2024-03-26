@@ -3,6 +3,8 @@
 These laptops typically come in a variety of hardware sku configurations:
   - AMD 7000 and above Ryzen cpus
   - Intel I12/I13/I14 -500/700/900 cpus
+  - DDR4/DDR5
+  - Thunderbolt4
   - 165 Hz or 144 Hz display panels
   - AMD Radeon Graphics
   - Integrated Intel Graphics -P GT2 Iris Xe Graphics
