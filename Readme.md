@@ -289,16 +289,12 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
 
     An X session should start with three windows. Verify typing and mouspad/mouse movement in the windows.
     Exit the X session by typing "exit" or control-d in the Login window.
-    If the screen freezes or no keyboard/mouspad control, try rebooting the laptop. At the command prompt type:
-    ```
-    reboot
-    ```
+    If the screen freezes or no keyboard/mouspad control, try rebooting the laptop with the power button. 
 
     When the keys flash select F12 for the rEFind boot menu. Select dragonflybsd (no icon yet), boot and look for the trouble.
+    
 
-
-
-12) Provision audio and check the default audio device.
+13) Provision audio and check the default audio device.
 
     At the command prompt type:
 
