@@ -315,6 +315,13 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
     ```
 
     This verifies that the audio devices were detected and have drivers attached. Internel speakers set as default as shown in /etc/sysctl.conf above.
+    Test for sound. At the command prompt type:
+    ```
+    cat filename > /dev/dsp
+    ```
+    _filename_ cannot be empty. Static shoud be heard from the internal speakers. If not go look for the trouble (e.g. wrong sysctl default for internel 
+    speakers, see #11 above).
+    
     At the command prompt type:
     ```
     mixer
@@ -326,7 +333,7 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
     ```
     This shows the audio volume and other parameters which can be set.
     
-13) Provision a user and install xfce4 window manager. At the command prompt type:
+14) Provision a user and install xfce4 window manager. At the command prompt type:
     ```
     adduser
 	Username: elephant
