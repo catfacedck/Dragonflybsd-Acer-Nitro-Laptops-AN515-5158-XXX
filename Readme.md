@@ -81,7 +81,7 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    https://www.dragonflybsd.org/docs/handbook/Installation/#index6h1
    ```
    Once the blank 2nd drive has partitions for rFEind and dragonflybsd, continue with the installation
-   Do a manual installation using the entire disk.
+   Do a manual installation using the entire drive. Be sure to select the correct drive for the install!
    ```
    https://www.dragonflybsd.org/docs/handbook/Installation/#index3h1
 
@@ -154,9 +154,8 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
  
   ```
 
-12) Provision audio.
+12) Provision audio. The default audio device and 0db volume.
 
-13) Provision audio. The default audio device and 0db volume.
     ```
     At the command prompt type: cat /dev/sndstat
 
