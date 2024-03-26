@@ -360,7 +360,8 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
 	OK? (yes/no): yes
     ```
 
-    Ensure that user "elephant" has been added to the video and wheel groups in the /etc/group file (video for Xorg, wheel for root access).
+    *_Ensure that user "elephant" has been added to the video and wheel groups in the /etc/group file (video for Xorg, wheel for root access)._*
+    
 
     At the command prompt type:
     ```
@@ -381,7 +382,7 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
 
 >[!Note]
 > Todo: camera for work teleconferencing. Oracle Java for EDA tools (AMD/Xilinx, Intel/Altera, Synopsys, Cadence, Siemens, etc.)
-> WiFi and drm are *_huge_* jobs likely to require large chunks of code from Openbsd and/or Freebsd.
+> WiFi and drm are *_huge_* jobs likely to require large chunks of code from Openbsd (iwx) and/or Freebsd (iwlwifi).
 
     
 
