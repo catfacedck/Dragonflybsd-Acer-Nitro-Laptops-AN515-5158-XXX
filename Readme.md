@@ -75,7 +75,7 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    ```
 
 7) Install drangonflybsd from the USB stick assumping the entire 2nd drive is used. Follow the directions here:
-   ```
+   
    Setup rEFind and drive partitions.
    ```
    https://www.dragonflybsd.org/docs/handbook/Installation/#index6h1
@@ -84,7 +84,8 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    Do a manual installation using the entire drive. Be sure to select the correct drive for the install!
    ```
    https://www.dragonflybsd.org/docs/handbook/Installation/#index3h1
-
+   ```
+   
    After installation, check that the /etc/fstab file looks something like this. (drive ID will be different matching dmesg).
    ```
    serno/210602802831.s5a		/boot	ufs	rw	1	1
@@ -98,7 +99,7 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    proc /proc procfs rw 0 0
    ```
 
-   Check the default filesystem mountpoints At the command prompt type: mount
+   Check the default filesystem mountpoints. At the command prompt type: mount
    ```
     serno/210602802831.s5d on / (hammer2, local)
     devfs on /dev (devfs, nosymfollow, local)
@@ -111,6 +112,7 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
     tmpfs on /var/run/shm (tmpfs, local)
 
   ```
+
    One should see something similar with a different drive ID after following the _ manual installation using the entire drive_ instructions.
 
 
