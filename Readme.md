@@ -14,13 +14,14 @@ These laptops typically come in a variety of hardware sku configurations:
   - Killer Ethernet (was Realtek now Intel)
   - Realtek and Nvidia Audio
   - Bluetooth >= 5.1
+  - Integrated camera
   - Internel - two (2) nvme drive connectors and one (1) SATA drive connector - three (3) internel drives total.
 
 What you will get after installation:
   - Ethernet network based dragonflybsd system using scfb Xorg driver, 1920x1080 165 Hz screen, mousepad, USB wireless mouse support, audio, mutiple drives, USB.
 
 What does not work:
-  - Intel integrated WiFi, Intel integrated Graphics (no drm-61-kmod -> no brightness/screen resolution control), Nvidia Graphics, suspend/sleep keys.
+  - Intel integrated WiFi, Intel integrated Graphics (no drm-61-kmod -> no brightness/screen resolution control), Nvidia Graphics, suspend/sleep keys, camera.
 
 Note: This dragonfly installation was tested on Intel I5-12500 and Intel I7-13700 systems with Integrated Intel Graphics/Wifi, Nvidia 3050/4050 Graphics, and Killer Ethernet.
   
@@ -46,6 +47,9 @@ Before proceeding further, make a USB flash rescue/recovery disk for the existin
    
 2) Change the laptop mousepad from iic to psm protocol. Mousepad iic protocal is not supported. To do so one must enter the BIOS advanced mode. Not planning to use the laptop mousepad? Skip this step.
    ```
+    press Fn+Tab three times in the BIOS. Reboot the laptop.
+    press F4, 4, R, F, V, F5, 5, T, G, B, F6, 6, Y, H, N while the laptop is turned off.
+    Hold Fn+Tab while starting the computer, before entering the BIOS.
    ```
    
 3) Go get the dragonflybsd image to copy onto a USB stick from here: https://mirror-master.dragonflybsd.org/snapshots/x86_64/
@@ -360,6 +364,9 @@ Before proceeding further, make a USB flash rescue/recovery disk for the existin
     ```
     The xfce4 window manager will start and can be configured to suit. xfce4 permits some provisioning of mouse actions. Consider using _moused_ in /etc/rc.conf for
     the mousepad.
+
+    ![Screenshot_elephant](https://github.com/catfacedck/Dragonflybsd-on-Acer-Nitro-Laptop-AN515-51-XXX/assets/42676711/e7455ab5-352c-427b-8193-e0bb13a16dfc)
+
     
 
     
