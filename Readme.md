@@ -52,29 +52,35 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
      Decompress this and flash to a USB stick. 
      ```
 
-5) Test that the BIOS changes and USB stick are working.
+4) Test that the BIOS changes and USB stick are working.
    ```
      Plug in the USB stick and reboot the laptop.
      At power up when the keyboard lights flash, press F12.
      Select the USB stick from the menu to boot from it.
    ```
    
-6) If the boot is successful inspect the dmesg boot log. If unsuccessful go look for the trouble.
+5) If the boot is successful inspect the dmesg boot log and pciconf output. If unsuccessful go look for the trouble.
    
    Do not install the system.
 
    ```
    Select: exit to shell and login as root.
-   At the command prompt type: dmesg|less
-   
+   ```
+   At the command prompt type:
+   ```
+   dmesg|less
+   ```
    Inspect the messages to ensure Ethernet was detected as well as the mousepad.
    One must have Ethernet with the corresponding driver to continue with the installation.
    
-   View all the pci devices and their driver attachments by typing: pciconf -lvv|less
-   No pci driver available is indicted by "none"
-
-   Ethernet (re0 or other), mousepad (psm0), and audio (hdaa/hdacc) should have been detected.
+   View all the pci devices and their driver attachments. At the command prompt type:
    ```
+   pciconf -lvv|less
+   ```
+   
+   No pci driver available is indicted by "none"
+   Ethernet (re0 or other), mousepad (psm0), and audio (hdaa/hdacc) should have been detected.
+   
 
 7) Install drangonflybsd from the USB stick assumping the entire 2nd drive is used. Follow the directions here:
    
@@ -107,41 +113,54 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    Check the default filesystem mountpoints. At the command prompt type: mount
    
    ```
-    serno/210602802831.s5d on / (hammer2, local)
-    devfs on /dev (devfs, nosymfollow, local)
-    /dev/serno/210602802831.s5a on /boot (ufs, local)
-    tmpfs on /tmp (tmpfs, local)
-    tmpfs on /var/tmp (tmpfs, local)
-    tmpfs on /var/run (tmpfs, local)
-    tmpfs on /usr/obj (tmpfs, local)
-    procfs on /proc (procfs, local)
-    tmpfs on /var/run/shm (tmpfs, local)
-  ```
-
-  One should see something similar with a different drive ID after following the **_manual installation using the entire drive_** instructions.
+   serno/210602802831.s5d on / (hammer2, local)
+   devfs on /dev (devfs, nosymfollow, local)
+   /dev/serno/210602802831.s5a on /boot (ufs, local)
+   tmpfs on /tmp (tmpfs, local)
+   tmpfs on /var/tmp (tmpfs, local)
+   tmpfs on /var/run (tmpfs, local)
+   tmpfs on /usr/obj (tmpfs, local)
+   procfs on /proc (procfs, local)
+   tmpfs on /var/run/shm (tmpfs, local)
+   ```
+   One should see something similar with a different drive ID after following the _manual installation using the entire drive_ instructions.
+   Reboot the laptop. At the command prompt type:
+   ```
+   reboot
+   ```
+   When the keys flash select F12 for the rEFind boot menu. Select dragonflybsd (no icon yet).
 
 
 9) Provision Ethernet networking. Be sure to connect the RJ-45 Ethernet port on the laptop to a work/home router running DHCP using a suitable cable.
 
+   At the command prompt type:
    ```
-   Boot the laptop and login as root.
-   At the command prompt type: ifconfig -a
+   ifconfig -a
+   ```
 
    The pci Ethernet device should be shown (example here for re0). If not return to #5 above and look for the trouble.
 
    At the command prompt type:
-   dhclient re0
-
-   This will assign an ip address from the router to the re0 interface and set up a static route.
    ```
+   dhclient re0
+   ```
+
+   This will assign an ip address from the router to the re0 interface and set up a static route. At the command prompt type:
+   ```
+   netstat -nr
+   ```
+   The re0 interface should be configured.
 
 10) Update package, dports, kernel source.
 
-    ```
+    At the command prompt type:
 
     ```
+    cd /usr
+    
+    ```
 
-11) Install common shells to test pkg.
+11) Install common shells to test the pkg mechanism.
 
     ```
     pkg install bash zsh
@@ -172,19 +191,64 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
     ```
     hostname="dflybsd65snap"
     clear_tmp_enable="YES"
+    # Needed by Xorg.
     dbus_enable="YES"
     hald_enable="YES"
     tmpfs_var_run="YES"
     sendmail_enable="NONE"
+    # Try some power flags.
     powerd_enable="YES"
     powerd_flags="-a hiadaptive -b adaptive"
+    # DHCP by default on interface re0.
     ifconfig_re0="dhcp"
  
     ```
 
-13) Provision audio and check the default audio device.
+    At the command prompt type:
+    ```
+    pkg install xorg
+    pkg install xf86-input-evdev
+    pkg install xf86-input-keyboard
+    pkg install xf86-input-libinput
+    pkg install xf86-input-mouse
+    pkg install xf86-video-scfb
+    pkg install chromium
+    pkg install firefox
+    ```
 
-    At the command prompt type: cat /dev/sndstat
+    The default fonts for Chromium and Firefox do not display correctly in particular for foreign languages.
+    At the command prompt type:
+    
+    ```
+    cd /usr/dports/www/x11-fonts/noto
+    make install
+    ```
+
+    Test that Xorg, keyboard, mousepad and USB or another mouse are working. No Xorg configuration file is needed.
+    At the command prompt type:
+    ```
+    startx
+    ```
+
+    An X session should start with three windows. Verify typing and mouspad/mouse movement in the windows.
+    Exit the X session by typing "exit" or control-d in the command window.
+    If the screen freezes or no keyboard/mouspad try rebooting the laptop. At the command prompt type:
+    ```
+    reboot
+    ```
+
+    When the keys flash select F12 for the rEFind boot menu. Select dragonflybsd (no icon yet).
+
+
+
+14) Provision audio and check the default audio device.
+
+    At the command prompt type:
+
+    ```
+    cat /dev/sndstat
+    ```
+    
     ```
     Installed devices:
     pcm0: <NVIDIA (0x00a0) (HDMI/DP 8ch)> (play)
