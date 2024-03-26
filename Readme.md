@@ -45,10 +45,11 @@ Here the assumption is two (2) drives: 1 with Windows 11 and 1 with dragonfly (a
    
 3) Go get the dragonflybsd image to copy onto a USB stick from here: https://mirror-master.dragonflybsd.org/snapshots/x86_64/
    
+   On Windows one can use Rufus (https://rufus.ie/en/) or dd from any Gnu/Linux or BSD system to flash the USB stick.
    A snapshot is necessary to get the Ethernet (re0) and audio drivers.
      ```
      Choose the DragonFly-x86_64-LATEST-BOOT.tar.bz2 file.
-     Decompress this and flash to a USB stick. On Windows one can use Rufus (https://rufus.ie/en/) or dd from any Gnu/Linux or BSD system.
+     Decompress this and flash to a USB stick. 
      ```
 
 5) Test that the BIOS changes and USB stick are working.
