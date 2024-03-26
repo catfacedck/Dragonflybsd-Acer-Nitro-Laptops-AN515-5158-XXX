@@ -83,11 +83,9 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
    dmesg|less
    ```
    
-   >[!Note]
-   > Inspect the messages to ensure Ethernet was detected as well as the mousepad and audio. One must have Ethernet with the corresponding driver to continue with the 
-    installation.
-   
-   View all the pci devices and their driver attachments. The Ethernet hardware is attached to the pci bus. At the command prompt type:
+   **Inspect the messages to ensure Ethernet was detected as well as the mousepad and audio. One must have Ethernet with the corresponding driver to continue with the 
+    installation. The Ethernet hardware is attached to the pci bus. To view all the pci devices and their driver attachments.**
+   At the command prompt type:
    ```
    pciconf -lvv|less
    ```
@@ -96,7 +94,7 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
    Ethernet (re0 or other), mousepad (psm0), and audio (hdaa/hdacc) should have been detected.
    
 
-6) Install drangonflybsd from the USB stick assumping the entire 2nd drive is used. Follow the directions here:
+7) Install drangonflybsd from the USB stick assumping the entire 2nd drive is used. Follow the directions here:
    
    Setup rEFind and drive partitions.
    ```
@@ -110,7 +108,7 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
    https://www.dragonflybsd.org/docs/handbook/Installation/#index3h1
    ```
    
-7) After installation, check that the /etc/fstab file looks something like this. The drive ID will be different matching dmesg.
+8) After installation, check that the /etc/fstab file looks something like this. The drive ID will be different matching dmesg.
    
    ```
    serno/210602802831.s5a		/boot	ufs	rw	1	1
@@ -145,7 +143,7 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
    When the keys flash select F12 for the rEFind boot menu. Select dragonflybsd (no icon yet).
 
 
-8) Provision Ethernet networking. Be sure to connect the RJ-45 Ethernet port on the laptop to a work/home router running DHCP using a suitable cable.
+9) Provision Ethernet networking. Be sure to connect the RJ-45 Ethernet port on the laptop to a work/home router running DHCP using a suitable cable.
 
    At the command prompt type:
    ```
@@ -188,7 +186,7 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
    ```
    The re0 interface should be configured with a static route.
 
-9) Provision package, dports, kernel source.
+10) Provision package, dports, kernel source.
 
     At the command prompt type:
 
