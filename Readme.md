@@ -9,10 +9,11 @@ These laptops typically come in a variety of hardware sku configurations:
   - AMD Radeon Graphics
   - Integrated Intel Graphics -P GT2 Iris Xe Graphics
   - Nvidia 30XX or 40xx Graphics
-  - Integrated Intel WiFi 6 AX2XX series
+  - Integrated Intel WiFi 6/6E AX2XX series
   - Integrated Mediatek MT7921 WiFi or variants
   - Killer Ethernet (was Realtek now Intel)
   - Realtek and Nvidia Audio
+  - Bluetooth >= 5.1
   - Internel - two (2) nvme drive connectors and one (1) SATA drive connector - three (3) internel drives total.
 
 What you will get after installation:
