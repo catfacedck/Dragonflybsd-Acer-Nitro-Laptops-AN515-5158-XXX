@@ -45,14 +45,17 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
        c) In the BOOT menu:
                              Boot Mode            UEFI
                              Secure Boot          Disabled
-       d) Press F10 to exit.
+       d) Press F10 to save and exit.
    ```
    
 2) Change the laptop mousepad from iic to psm protocol. Mousepad iic protocal is not supported. To do so one must enter the BIOS advanced mode. Not planning to use the laptop mousepad? Skip this step.
    ```
-    a) press Fn+Tab three times in the BIOS. Reboot the laptop.
-    b) press F4, 4, R, F, V, F5, 5, T, G, B, F6, 6, Y, H, N while the laptop is turned off.
-    c) Hold Fn+Tab while starting the computer, before entering the BIOS.
+    a) Press Fn+Tab three times. Reboot the laptop.
+    b) Press F4, 4, R, V, F5, 5, T, G, B, F6, 6, Y, H, N while the laptop is turned off.
+    c) Hold Fn+Tab while starting the computer, before entering the BIOS. Press F2 to enter the bios
+    d) In the Main menu, scroll down to Touchpad:
+    e) Change the iic value to psm.
+    f) Press F10 to save and exit.
    ```
    
 3) Go get the dragonflybsd image to copy onto a USB flash from here: https://mirror-master.dragonflybsd.org/snapshots/x86_64/
