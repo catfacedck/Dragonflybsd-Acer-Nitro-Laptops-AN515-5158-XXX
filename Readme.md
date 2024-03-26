@@ -53,8 +53,10 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
     a) Press Fn+Tab three times. Reboot the laptop.
     b) Press F4, 4, R, V, F5, 5, T, G, B, F6, 6, Y, H, N while the laptop is turned off.
     c) Hold Fn+Tab while starting the computer, before entering the BIOS. Press F2 to enter the bios
-    d) In the Main menu, scroll down to Touchpad:
-    e) Change the iic value to psm.
+    d) In the Main menu:
+   			    Touchpad:		iic
+    e) Change the iic value to psm:
+   			    Touchpad:		psm
     f) Press F10 to save and exit.
    ```
    
