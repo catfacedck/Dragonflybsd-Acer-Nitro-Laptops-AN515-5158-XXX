@@ -207,7 +207,7 @@ Before proceeding further, make a USB flash rescue/recovery disk for the existin
    
     https://www.dragonflybsd.org/docs/handbook/ConfigureKernel/
 
-11) Provision Xorg. Add the following content to /etc/sysctl.conf, /boot/loader.conf, and /etc/rc.conf .
+10) Provision Xorg. Add the following content to /etc/sysctl.conf, /boot/loader.conf, and /etc/rc.conf .
 
     /etc/sysctl.conf
     ```
@@ -272,13 +272,13 @@ Before proceeding further, make a USB flash rescue/recovery disk for the existin
     ```
 
     An X session should start with three windows. Verify typing and mouspad/mouse movement in the windows.
-    Exit the X session by typing "exit" or control-d in the command window.
-    If the screen freezes or no keyboard/mouspad try rebooting the laptop. At the command prompt type:
+    Exit the X session by typing "exit" or control-d in the Login window.
+    If the screen freezes or no keyboard/mouspad control, try rebooting the laptop. At the command prompt type:
     ```
     reboot
     ```
 
-    When the keys flash select F12 for the rEFind boot menu. Select dragonflybsd (no icon yet).
+    When the keys flash select F12 for the rEFind boot menu. Select dragonflybsd (no icon yet), boot and look for the trouble.
 
 
 
@@ -299,3 +299,14 @@ Before proceeding further, make a USB flash rescue/recovery disk for the existin
     ```
 
     This verifies that the audio devices were detected and have drivers attached. Internel speakers set as default as shown in /etc/sysctl.conf above.
+    At the command prompt type:
+    ```
+    mixer
+    ```
+    ```
+    Mixer vol      is currently set to  80:80
+    Mixer pcm      is currently set to 100:100
+    Mixer ogain    is currently set to 100:100
+    ```
+    This verifies the audio volume and other parameters can be set.
+    
