@@ -374,6 +374,7 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
     ```
     pkg install xfce
     pkg install xfce4-screenshooter-plugin
+    pkg install xfce4-mixer
     ```
     The _screenshooter-plugin_ allows screenshots. Xfce4 and i3 window managers were tested on this hardware.
 
