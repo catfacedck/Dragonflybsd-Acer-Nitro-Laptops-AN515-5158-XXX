@@ -88,7 +88,8 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
    dmesg|less
    ```
 
-   **Inspect the messages to ensure Ethernet was detected as well as the mousepad and audio. One must have Ethernet with the corresponding driver to continue 	      with the installation. The Ethernet hardware is attached to the pci bus. To view all the pci devices and their driver attachments.**
+   **Inspect the messages to ensure Ethernet was detected as well as the mousepad and audio. One must have Ethernet with the corresponding driver to continue 	      
+     with the installation. The Ethernet hardware is attached to the pci bus. To view all the pci devices and their driver attachments.**
    
    At the command prompt type:
    ```
@@ -99,7 +100,7 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
    Ethernet (re0 or other), mousepad (psm0), and audio (hdaa/hdacc) should have been detected.
    
 
-7) Install drangonflybsd from the USB stick assumping the entire 2nd drive is used. Follow the directions here:
+6) Install drangonflybsd from the USB stick assumping the entire 2nd drive is used. Follow the directions here:
    
    Setup rEFind and drive partitions.
    ```
@@ -113,7 +114,8 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
    https://www.dragonflybsd.org/docs/handbook/Installation/#index3h1
    ```
    
-8) After installation, reboot the laptop from the drive not the USB stick. When the keys flash select F12 for the rEFind boot menu. Select dragonflybsd (no    icon yet). Check that the /etc/fstab file looks something like this. The drive ID will be different matching dmesg.
+7) After installation, reboot the laptop from the drive not the USB stick. When the keys flash select F12 for the rEFind boot menu. Select dragonflybsd (no    icon 
+   yet). Check that the /etc/fstab file looks something like this. The drive ID will be different matching dmesg.
    
    ```
    serno/210602802831.s5a		/boot	ufs	rw	1	1
@@ -151,7 +153,7 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
    When the keys flash select F12 for the rEFind boot menu. Select dragonflybsd (no icon yet).
 
 
-10) Provision Ethernet networking. Be sure to connect the RJ-45 Ethernet port on the laptop to a work/home switch/router running DHCP using a suitable cable.
+8) Provision Ethernet networking. Be sure to connect the RJ-45 Ethernet port on the laptop to a work/home switch/router running DHCP using a suitable cable.
 
    At the command prompt type:
    ```
@@ -194,7 +196,7 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
    ```
    The re0 interface should be configured with a static route.
 
-11) Provision package, dports, kernel source.
+9) Provision package, dports, kernel source.
 
     At the command prompt type:
 
@@ -225,8 +227,9 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
     https://www.dragonflybsd.org/docs/howtos/HowToDPorts/
    
     https://www.dragonflybsd.org/docs/handbook/ConfigureKernel/
+    
 
-12) Provision Xorg. Add the following content to /etc/sysctl.conf, /boot/loader.conf, and /etc/rc.conf .
+10) Provision Xorg. Add the following content to /etc/sysctl.conf, /boot/loader.conf, and /etc/rc.conf .
 
     /etc/sysctl.conf
     ```
@@ -297,7 +300,7 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
     When the keys flash select F12 for the rEFind boot menu. Select dragonflybsd (no icon yet), boot and look for the trouble.
     
 
-13) Provision audio and check the default audio device.
+11) Provision audio and check the default audio device.
 
     At the command prompt type:
 
@@ -332,7 +335,8 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
     ```
     This shows the audio volume and other parameters which can be set.
     
-14) Provision a user and install xfce4 window manager. At the command prompt type:
+    
+12) Provision a user and install xfce4 window manager. At the command prompt type:
     ```
     adduser
 	Username: elephant
@@ -390,23 +394,23 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
     ![Screenshot_elephant](https://github.com/catfacedck/Dragonflybsd-on-Acer-Nitro-Laptop-AN515-51-XXX/assets/42676711/e7455ab5-352c-427b-8193-e0bb13a16dfc)
 
 
-16) Provision _polkit_ so the *Shutdown* and *Log Out* menus may be used from xfce4. Add the following file to /usr/local/etc/polkit-1/rules directory.
-```
-polkit.addRule(function (action, subject) {
-  if ((action.id == "org.freedesktop.consolekit.system.restart" ||
-      action.id == "org.freedesktop.consolekit.system.stop")
-      && subject.isInGroup("elephant")) {
-    return polkit.Result.YES;
-  }
-});
+13) Provision _polkit_ so the *Shutdown* and *Log Out* menus may be used from xfce4. Add the following file to /usr/local/etc/polkit-1/rules directory.
+    ```
+	polkit.addRule(function (action, subject) {
+	  if ((action.id == "org.freedesktop.consolekit.system.restart" ||
+	      action.id == "org.freedesktop.consolekit.system.stop")
+	      && subject.isInGroup("elephant")) {
+	    return polkit.Result.YES;
+	  }
+	});
 
-polkit.addRule(function (action, subject) {
-  if (action.id == "org.freedesktop.consolekit.system.suspend"
-      && subject.isInGroup("elephant")) {
-    return polkit.Result.YES;
-  }
-});
-```
+	polkit.addRule(function (action, subject) {
+	  if (action.id == "org.freedesktop.consolekit.system.suspend"
+	      && subject.isInGroup("elephant")) {
+	    return polkit.Result.YES;
+	  }
+	});
+   ```
 Name this file "80-shutdown-rules" (the number is not important but the filename must end with "rules"). The USER (elephant) here must be a member of the "operator" group in /etc/group.
 >[!Caution]
 >This is a critical security vulnerability with USER in the operator group.
