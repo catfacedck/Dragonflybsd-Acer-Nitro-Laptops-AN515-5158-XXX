@@ -413,6 +413,8 @@ polkit.addRule(function (action, subject) {
   }
 });
    ```
+Name this file "80-shutdown-rules" (the number is not important but the filename must end with "rules"). The USER (elephant) here must be a member of the
+"operator" group in /etc/group.
    
    
 
