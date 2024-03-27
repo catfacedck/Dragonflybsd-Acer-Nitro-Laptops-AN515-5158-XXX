@@ -396,23 +396,25 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
 
 
 13) Provision _polkit_ so the *Shutdown* and *Log Out* menus may be used from xfce4. Add the following file to /usr/local/etc/polkit-1/rules directory.
+    
     ```
-	polkit.addRule(function (action, subject) {
+    polkit.addRule(function (action, subject) {
 	  if ((action.id == "org.freedesktop.consolekit.system.restart" ||
 	      action.id == "org.freedesktop.consolekit.system.stop")
 	      && subject.isInGroup("elephant")) {
 	    return polkit.Result.YES;
 	  }
-	});
-
-	polkit.addRule(function (action, subject) {
+   });
+   polkit.addRule(function (action, subject) {
 	  if (action.id == "org.freedesktop.consolekit.system.suspend"
 	      && subject.isInGroup("elephant")) {
 	    return polkit.Result.YES;
 	  }
-	});
+   });
    ```
+
 Name this file "80-shutdown-rules" (the number is not important but the filename must end with "rules"). The USER (elephant) here must be a member of the "operator" group in /etc/group.
+
 >[!Caution]
 >This is a critical security vulnerability with USER in the operator group.
 
