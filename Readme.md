@@ -380,11 +380,10 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
     The xfce4 window manager will start and can be configured to suit. xfce4 permits some provisioning of mouse actions, adequate for USB mice. Consider using 
     _moused_ in /etc/rc.conf for the mousepad. Add to /etc/rc.conf:
     ```
-    	moused_enable="YES"
-	moused_type="auto"
-	moused_port="/dev/psm0"
-	moused_flags="-V"
-
+    moused_enable="YES"
+    moused_type="auto"
+    moused_port="/dev/psm0"
+    moused_flags="-V"
     ```
     Use the _apm_ command to check the battery life.
 
