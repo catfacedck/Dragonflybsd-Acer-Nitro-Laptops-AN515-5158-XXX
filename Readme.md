@@ -377,12 +377,21 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
     ```
     startxfce4
     ```
-    The xfce4 window manager will start and can be configured to suit. xfce4 permits some provisioning of mouse actions. Consider using _moused_ in /etc/rc.conf for the mousepad.
+    The xfce4 window manager will start and can be configured to suit. xfce4 permits some provisioning of mouse actions, adequate for USB mice. Consider using 
+    _moused_ in /etc/rc.conf for the mousepad. Add to /etc/rc.conf:
+    ```
+    	moused_enable="YES"
+	moused_type="auto"
+	moused_port="/dev/psm0"
+	moused_flags="-V"
+
+    ```
+    Use the _apm_ command to check the battery life.
 
     ![Screenshot_elephant](https://github.com/catfacedck/Dragonflybsd-on-Acer-Nitro-Laptop-AN515-51-XXX/assets/42676711/e7455ab5-352c-427b-8193-e0bb13a16dfc)
 
 
-15) Provision _polkit_ so the *Shutdown* and *Log Out* menus may be used from xfce4. Add the following file to /usr/local/etc/polkit-1/rules directory.
+16) Provision _polkit_ so the *Shutdown* and *Log Out* menus may be used from xfce4. Add the following file to /usr/local/etc/polkit-1/rules directory.
 ```
 polkit.addRule(function (action, subject) {
   if ((action.id == "org.freedesktop.consolekit.system.restart" ||
@@ -401,12 +410,12 @@ polkit.addRule(function (action, subject) {
 ```
 Name this file "80-shutdown-rules" (the number is not important but the filename must end with "rules"). The USER (elephant) here must be a member of the "operator" group in /etc/group.
 >[!Caution]
->This is a critical security vulnerability.
+>This is a critical security vulnerability with USER in the operator group.
 
 
 14) Miscellaneous.
 >[!Note]
-> Todo: camera for work teleconferencing.
+> Todo: camera for work teleconferencing. Suspend/resume nice to have but not critical.
 >
 > Oracle Java for EDA tools (AMD/Xilinx, Intel/Altera, Synopsys/Cadence/Siemens, etc).
 >
@@ -416,9 +425,9 @@ Name this file "80-shutdown-rules" (the number is not important but the filename
 >[!Tip]
 > October 2023/March 2024 *BSD/Linux tested on Acer Nitro 515-51-XXX series laptops running Intel.
 >
-> Openbsd 7.4: support for WiFi and Intel -P GT2 Iris Xe Graphics using drm. Nearly everything is functional (no camera) including iic mousepad, except suspend/resume. Likely a configuration issue. No Oracle Java.
+> Openbsd 7.4: supports WiFi and Intel -P GT2 Iris Xe Graphics using drm. Nearly everything is functional (no camera) including iic mousepad, except suspend/resume. Likely a configuration issue. No Oracle Java.
 >
-> Freebsd 14-stable/15-current: support for WiFi and Intel -P GT2 Iris Xe Graphics using drm-61-kmod. Wifi is problematic sometimes hanging the system and/or dropping connections. Freebsd 14-release (or less) does not support Intel WiFi or Graphics on this platform. Suspend/resume is nonfunctional as is iic mousepad (use psm instead). No Oracle Java.
+> Freebsd 14-stable/15-current: supports WiFi and Intel -P GT2 Iris Xe Graphics using drm-61-kmod. Wifi is problematic sometimes hanging the system and/or dropping connections. Freebsd 14-release (or less) does not support Intel WiFi or Graphics on this platform. Suspend/resume is nonfunctional as is iic mousepad (use psm instead). No Oracle Java.
 >
 > Ubuntu 22.04/23.10: everything is functional (update usb file and recompile module for camera) including iic mousepad and EDA tools based on Oracle Java.
 
