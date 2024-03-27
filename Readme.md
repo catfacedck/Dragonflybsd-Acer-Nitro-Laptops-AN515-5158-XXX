@@ -402,10 +402,10 @@ polkit.addRule(function (action, subject) {
 ```
 Name this file "80-shutdown-rules" (the number is not important but the filename must end with "rules"). The USER (elephant) here must be a member of the "operator" group in /etc/group.
 >[!Caution]
->This is a scritical security vulnerability.
+>This is a critical security vulnerability.
 
 
-14) Current status March 2024.
+14) Miscellaneous.
 >[!Note]
 > Todo: camera for work teleconferencing.
 >
