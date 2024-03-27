@@ -432,7 +432,7 @@ Name this file "80-shutdown-rules" (the number is not important but the filename
 
 
 >[!Tip]
-> October 2023/March 2024 *BSD/Linux tested on Acer Nitro 515-51-XXX series laptops running Intel.
+> <ins>October 2023/March 2024 *BSD/Linux tested on Acer Nitro 515-51-XXX series laptops running Intel.</ins>
 >
 > Openbsd 7.4: supports WiFi and Intel -P GT2 Iris Xe Graphics using drm. Nearly everything is functional (no camera) including iic mousepad, except suspend/resume. Likely a configuration issue. No Oracle Java.
 >
