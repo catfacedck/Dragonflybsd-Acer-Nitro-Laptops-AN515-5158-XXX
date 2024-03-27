@@ -88,8 +88,7 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
    dmesg|less
    ```
 
-   **Inspect the messages to ensure Ethernet was detected as well as the mousepad and audio. One must have Ethernet with the corresponding driver to continue 	      
-     with the installation. The Ethernet hardware is attached to the pci bus. To view all the pci devices and their driver attachments.**
+   <ins>Inspect the messages to ensure Ethernet was detected as well as the mousepad and audio. One must have Ethernet with the corresponding driver to continue 	with the installation. The Ethernet hardware is attached to the pci bus. To view all the pci devices and their driver attachments.</in>
    
    At the command prompt type:
    ```
