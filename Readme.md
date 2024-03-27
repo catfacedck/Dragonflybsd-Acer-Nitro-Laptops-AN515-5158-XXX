@@ -87,9 +87,8 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
    ```
    dmesg|less
    ```
-   
-   **Inspect the messages to ensure Ethernet was detected as well as the mousepad and audio. One must have Ethernet with the corresponding driver to continue with the 
-    installation. The Ethernet hardware is attached to the pci bus. To view all the pci devices and their driver attachments.**
+
+   **Inspect the messages to ensure Ethernet was detected as well as the mousepad and audio. One must have Ethernet with the corresponding driver to continue 	      with the installation. The Ethernet hardware is attached to the pci bus. To view all the pci devices and their driver attachments.**
    
    At the command prompt type:
    ```
@@ -420,11 +419,11 @@ Name this file "80-shutdown-rules" (the number is not important but the filename
 
 
 >[!Tip]
-> March 2024 *BSD/Linux tested on Acer Nitro 515-51-XXX series laptops running Intel.
+> October 2023/March 2024 *BSD/Linux tested on Acer Nitro 515-51-XXX series laptops running Intel.
 >
-> Openbsd >7.2: support for WiFi and Intel -P GT2 Iris Xe Graphics using drm. Nearly everything is functional including iic mousepad, except suspend/resume.
+> Openbsd 7.4: support for WiFi and Intel -P GT2 Iris Xe Graphics using drm. Nearly everything is functional including iic mousepad, except suspend/resume. Likely a configuration issue. 
 >
-> Freebsd 14-stable/15-current: support for WiFi and Intel -P GT2 Iris Xe Graphics using drm-61-kmod. Wifi is problematic sometimes hanging the system and/or dropping connections. Freebsd 14-release does not support Intel WiFi or Graphics on this platform. Suspend/resume is nonfunctional as is iic mousepad (use psm instead).
+> Freebsd 14-stable/15-current: support for WiFi and Intel -P GT2 Iris Xe Graphics using drm-61-kmod. Wifi is problematic sometimes hanging the system and/or dropping connections. Freebsd 14-release (or less) does not support Intel WiFi or Graphics on this platform. Suspend/resume is nonfunctional as is iic mousepad (use psm instead).
 >
 > Ubuntu 22.04/23.10: everything is functional including iic mousepad and EDA tools based on Oracle Java.
 
