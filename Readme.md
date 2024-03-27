@@ -401,14 +401,14 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
 polkit.addRule(function (action, subject) {
   if ((action.id == "org.freedesktop.consolekit.system.restart" ||
       action.id == "org.freedesktop.consolekit.system.stop")
-      && subject.isInGroup("operator")) {
+      && subject.isInGroup("elephant")) {
     return polkit.Result.YES;
   }
 });
 
 polkit.addRule(function (action, subject) {
   if (action.id == "org.freedesktop.consolekit.system.suspend"
-      && subject.isInGroup("operator")) {
+      && subject.isInGroup("elephant")) {
     return polkit.Result.YES;
   }
 });
