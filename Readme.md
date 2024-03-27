@@ -410,20 +410,20 @@ Name this file "80-shutdown-rules" (the number is not important but the filename
 >
 > Oracle Java for EDA tools (AMD/Xilinx, Intel/Altera, Synopsys/Cadence/Siemens, etc).
 >
-> WiFi and drm are *_huge_* jobs requiring large chunks of code from Openbsd (iwx) and/or Freebsd (iwlwifi).
+> Bringing in WiFi and drm are huge jobs requiring large chunks of code from Openbsd (iwx) and/or Freebsd (iwlwifi).
 > A cursory glance indicates that:
 >
 > Openbsd iwx WiFi (3 files) with different underlying kernel structures.
 >
-> Freebsd requires an entire Linux ecosystem for both WiFI and Graphics (drm-61-kmod) in addition to the drivers themselves.
+> Freebsd an entire Linux ecosystem for both WiFI and Graphics (drm-61-kmod) in addition to the drivers themselves.
 
 
 >[!Tip]
 > October 2023/March 2024 *BSD/Linux tested on Acer Nitro 515-51-XXX series laptops running Intel.
 >
-> Openbsd 7.4: support for WiFi and Intel -P GT2 Iris Xe Graphics using drm. Nearly everything is functional including iic mousepad, except suspend/resume. Likely a configuration issue. 
+> Openbsd 7.4: support for WiFi and Intel -P GT2 Iris Xe Graphics using drm. Nearly everything is functional including iic mousepad, except suspend/resume. Likely a configuration issue. No Oracle Java.
 >
-> Freebsd 14-stable/15-current: support for WiFi and Intel -P GT2 Iris Xe Graphics using drm-61-kmod. Wifi is problematic sometimes hanging the system and/or dropping connections. Freebsd 14-release (or less) does not support Intel WiFi or Graphics on this platform. Suspend/resume is nonfunctional as is iic mousepad (use psm instead).
+> Freebsd 14-stable/15-current: support for WiFi and Intel -P GT2 Iris Xe Graphics using drm-61-kmod. Wifi is problematic sometimes hanging the system and/or dropping connections. Freebsd 14-release (or less) does not support Intel WiFi or Graphics on this platform. Suspend/resume is nonfunctional as is iic mousepad (use psm instead). No Oracle Java.
 >
 > Ubuntu 22.04/23.10: everything is functional including iic mousepad and EDA tools based on Oracle Java.
 
