@@ -90,6 +90,7 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
    
    **Inspect the messages to ensure Ethernet was detected as well as the mousepad and audio. One must have Ethernet with the corresponding driver to continue with the 
     installation. The Ethernet hardware is attached to the pci bus. To view all the pci devices and their driver attachments.**
+   
    At the command prompt type:
    ```
    pciconf -lvv|less
@@ -99,7 +100,7 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
    Ethernet (re0 or other), mousepad (psm0), and audio (hdaa/hdacc) should have been detected.
    
 
-6) Install drangonflybsd from the USB stick assumping the entire 2nd drive is used. Follow the directions here:
+7) Install drangonflybsd from the USB stick assumping the entire 2nd drive is used. Follow the directions here:
    
    Setup rEFind and drive partitions.
    ```
@@ -113,7 +114,7 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
    https://www.dragonflybsd.org/docs/handbook/Installation/#index3h1
    ```
    
-7) After installation, check that the /etc/fstab file looks something like this. The drive ID will be different matching dmesg.
+8) After installation, check that the /etc/fstab file looks something like this. The drive ID will be different matching dmesg.
    
    ```
    serno/210602802831.s5a		/boot	ufs	rw	1	1
@@ -421,9 +422,9 @@ Name this file "80-shutdown-rules" (the number is not important but the filename
 >[!Tip]
 > March 2024 *BSD support for Acer Nitro 515-51-XXX series laptops running Intel.
 >
-> Openbsd 7.3/7.4: support for WiFi and Intel -P GT2 Iris Xe Graphics using drm. Nearly everything is functional.
+> Openbsd 7.3/7.4: support for WiFi and Intel -P GT2 Iris Xe Graphics using drm. Nearly everything is functional except suspend/resume and iic mousepad (use psm instead).
 >
-> Freebsd 14-stable/15-current: support for WiFi and Intel -P GT2 Iris Xe Graphics using drm-61-kmod. Wifi is problematic sometimes hanging the system and/or dropping connections. Freebsd 14-release does not support Intel WiFi or Graphics on this platform.
+> Freebsd 14-stable/15-current: support for WiFi and Intel -P GT2 Iris Xe Graphics using drm-61-kmod. Wifi is problematic sometimes hanging the system and/or dropping connections. Freebsd 14-release does not support Intel WiFi or Graphics on this platform. Suspend/resume is nonfunctional as is iic mousepad (use psm instead).
 
     
 
