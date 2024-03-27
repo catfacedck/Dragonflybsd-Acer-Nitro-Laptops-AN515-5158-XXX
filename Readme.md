@@ -378,7 +378,7 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
     startxfce4
     ```
     The xfce4 window manager will start and can be configured to suit. xfce4 permits some provisioning of mouse actions, adequate for USB mice. Consider using 
-    _moused_ in /etc/rc.conf for the mousepad. Add to /etc/rc.conf:
+    _moused_ with the psm0 mousepad. Add to /etc/rc.conf:
     ```
     moused_enable="YES"
     moused_type="auto"
