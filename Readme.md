@@ -416,7 +416,7 @@ Name this file "80-shutdown-rules" (the number is not important but the filename
 >
 > Openbsd iwx WiFi (3 files) with different underlying kernel structures.
 >
-> Freebsd requires and entire Linux ecosystem for both WiFI and Graphics (drm-61-kmod) in addition to the drivers themselves.
+> Freebsd requires an entire Linux ecosystem for both WiFI and Graphics (drm-61-kmod) in addition to the drivers themselves.
 
 
 >[!Tip]
