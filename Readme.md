@@ -3,8 +3,8 @@
 These laptops typically come in a variety of hardware sku configurations:
   - AMD 7000 and above Ryzen cpus
   - Intel I12/I13/I14 -500/700/900 cpus
-  - DDR4/DDR5
-  - Thunderbolt4
+  - DDR4/DDR5 Ram
+  - Thunderbolt 4
   - 165 Hz or 144 Hz display panels
   - AMD Radeon Graphics
   - Integrated Intel Graphics -P GT2 Iris Xe Graphics
@@ -316,7 +316,7 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
     cat filename > /dev/dsp
     ```
     _filename_ cannot be empty. Static shoud be heard from the internal speakers. If not go look for the trouble (e.g. wrong sysctl default for internel 
-    speakers, see #11 above).
+    speakers, see #10 above).
     
     At the command prompt type:
     ```
@@ -401,12 +401,16 @@ Name this file "80-shutdown-rules" (the number is not important but the filename
 >This is a scritical security vulnerability.
 
 
+14) Current status March 2024.
 >[!Note]
 > Todo: camera for work teleconferencing.
 >
 > Oracle Java for EDA tools (AMD/Xilinx, Intel/Altera, Synopsys, Cadence, Siemens, etc).
 >
-> WiFi and drm are *_huge_* jobs likely to require large chunks of code from Openbsd (iwx) and/or Freebsd (iwlwifi).
+> WiFi and drm are *_huge_* jobs requiring large chunks of code from Openbsd (iwx) and/or Freebsd (iwlwifi).
+> A cursory glance indicates that:
+> Openbsd iwx WiFi (3 files) with different underlying kernel structures.
+> Freebsd requires and entire Linux ecosystem for both WiFI and Graphics (drm-61-kmod) in addition to the drivers themselves.
 
 
 >[!Tip]
