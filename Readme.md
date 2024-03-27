@@ -398,11 +398,11 @@ polkit.addRule(function (action, subject) {
 ```
 Name this file "80-shutdown-rules" (the number is not important but the filename must end with "rules"). The USER (elephant) here must be a member of the "operator" group in /etc/group.
 >[!Caution]
->This is a security vulnerability.
+>This is a scritical security vulnerability.
 
 
 >[!Note]
-> Todo: camera for work teleconferencing. Oracle Java for EDA tools (AMD/Xilinx, Intel/Altera, Synopsys, Cadence, Siemens, etc.)
+> Todo: camera for work teleconferencing. Oracle Java for EDA tools (AMD/Xilinx, Intel/Altera, Synopsys, Cadence, Siemens, etc).
 > WiFi and drm are *_huge_* jobs likely to require large chunks of code from Openbsd (iwx) and/or Freebsd (iwlwifi).
 
     
