@@ -409,7 +409,7 @@ Name this file "80-shutdown-rules" (the number is not important but the filename
 >[!Note]
 > Todo: camera for work teleconferencing.
 >
-> Oracle Java for EDA tools (AMD/Xilinx, Intel/Altera, Synopsys, Cadence, Siemens, etc).
+> Oracle Java for EDA tools (AMD/Xilinx, Intel/Altera, Synopsys/Cadence/Siemens, etc).
 >
 > WiFi and drm are *_huge_* jobs requiring large chunks of code from Openbsd (iwx) and/or Freebsd (iwlwifi).
 > A cursory glance indicates that:
@@ -420,13 +420,13 @@ Name this file "80-shutdown-rules" (the number is not important but the filename
 
 
 >[!Tip]
-> March 2024 *BSD/Linux support for Acer Nitro 515-51-XXX series laptops running Intel.
+> March 2024 *BSD/Linux tested on Acer Nitro 515-51-XXX series laptops running Intel.
 >
-> Openbsd 7.3/7.4: support for WiFi and Intel -P GT2 Iris Xe Graphics using drm. Nearly everything is functional except suspend/resume and iic mousepad (use psm instead).
+> Openbsd >7.2: support for WiFi and Intel -P GT2 Iris Xe Graphics using drm. Nearly everything is functional including iic mousepad, except suspend/resume.
 >
 > Freebsd 14-stable/15-current: support for WiFi and Intel -P GT2 Iris Xe Graphics using drm-61-kmod. Wifi is problematic sometimes hanging the system and/or dropping connections. Freebsd 14-release does not support Intel WiFi or Graphics on this platform. Suspend/resume is nonfunctional as is iic mousepad (use psm instead).
 >
-> Ubuntu 22.04/23.10: everything is functional including EDA tools based on Oracle Java.
+> Ubuntu 22.04/23.10: everything is functional including iic mousepad and EDA tools based on Oracle Java.
 
     
 
