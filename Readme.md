@@ -1,4 +1,4 @@
-# Dragonflybsd 6.5 Snapshot Release on Acer Nitro AN515-51-XXX Series Laptops
+# Dragonflybsd 6.5 Snapshot Release on Acer Nitro AN515-58-XXX Series Laptops
 
 These laptops typically come in a variety of hardware sku configurations:
   - AMD 7000 and above Ryzen cpus
@@ -27,7 +27,7 @@ These laptops typically come in a variety of hardware sku configurations:
     suspend/sleep keys, camera, bluetooth, microSDTM Card Reader.
 
 >[!Note]
->This dragonfly installation was tested on Intel I5-12500 and Intel I7-12650 systems with Integrated Intel Graphics/Wifi, Nvidia 3050/4050 Graphics, and Killer Ethernet.
+>This dragonfly installation was tested on Intel I5-12500 and Intel I7-12650 systems with Integrated Intel Graphics/Wifi, Nvidia 3050/4050 Graphics, and Killer Ethernet E2600.
   
 
 # **_Step-by step install procedure:_**
