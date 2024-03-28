@@ -1,4 +1,4 @@
-# Dragonflybsd 6.5 Snapshot Release on Acer Nitro AN515-58-XXX Series Laptops
+# Dragonflybsd 6.5 Snapshot Release on Acer Nitro AN515-51/58-XXX Series Laptops
 
 These laptops typically come in a variety of hardware sku configurations:
   - AMD 7000 and above Ryzen cpus
