@@ -15,6 +15,7 @@ These laptops typically come in a variety of hardware sku configurations:
   - Realtek and Nvidia Audio
   - Bluetooth >= 5.1
   - Integrated camera
+  - MicroSDTM Card Reader
   - Internel - two (2) nvme drive connectors and one (1) SATA drive connector - three (3) internel drives total.
 
 **What you will get after installation:**
@@ -23,7 +24,7 @@ These laptops typically come in a variety of hardware sku configurations:
 
 **What does not work:**
   - Intel integrated WiFi, Killer WiFi, Intel integrated Graphics (no drm-61-kmod -> no brightness/screen resolution control), Nvidia Graphics, 
-    suspend/sleep keys, camera, bluetooth.
+    suspend/sleep keys, camera, bluetooth, microSDTM Card Reader.
 
 >[!Note]
 >This dragonfly installation was tested on Intel I5-12500 and Intel I7-12650 systems with Integrated Intel Graphics/Wifi, Nvidia 3050/4050 Graphics, and Killer Ethernet.
