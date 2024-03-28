@@ -9,22 +9,24 @@ These laptops typically come in a variety of hardware sku configurations:
   - AMD Radeon Graphics
   - Integrated Intel Graphics -P GT2 Iris Xe Graphics
   - Nvidia 30XX or 40xx Graphics
-  - Integrated Intel WiFi 6/6E AX2XX series
+  - Integrated Intel WiFi 6/6E AX2XX series (sometimes referred to as Killer Wi-Fi 6 1650)
   - Integrated Mediatek MT7921 WiFi or variants
-  - Killer Ethernet (was Realtek now Intel)
+  - Killer Ethernet E2600 (was Realtek now Intel)
   - Realtek and Nvidia Audio
   - Bluetooth >= 5.1
   - Integrated camera
   - Internel - two (2) nvme drive connectors and one (1) SATA drive connector - three (3) internel drives total.
 
 **What you will get after installation:**
-  - Ethernet network based dragonflybsd system using scfb Xorg driver, 1920x1080 165 Hz screen, mousepad, USB wireless mouse support, audio, mutiple drives, USB.
+  - Ethernet network based dragonflybsd system using scfb Xorg driver, 1920x1080 165 Hz screen, mousepad, USB wireless mouse support, audio, mutiple 
+    drives, USB.
 
 **What does not work:**
-  - Intel integrated WiFi, Intel integrated Graphics (no drm-61-kmod -> no brightness/screen resolution control), Nvidia Graphics, suspend/sleep keys, camera.
+  - Intel integrated WiFi, Killer WiFi, Intel integrated Graphics (no drm-61-kmod -> no brightness/screen resolution control), Nvidia Graphics, 
+    suspend/sleep keys, camera, bluetooth.
 
 >[!Note]
->This dragonfly installation was tested on Intel I5-12500 and Intel I7-13700 systems with Integrated Intel Graphics/Wifi, Nvidia 3050/4050 Graphics, and Killer Ethernet.
+>This dragonfly installation was tested on Intel I5-12500 and Intel I7-12650 systems with Integrated Intel Graphics/Wifi, Nvidia 3050/4050 Graphics, and Killer Ethernet.
   
 
 # **_Step-by step install procedure:_**
