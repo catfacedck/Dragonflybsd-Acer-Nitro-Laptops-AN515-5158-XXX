@@ -116,7 +116,7 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
    ```
    
 7) After installation, reboot the laptop from the drive not the USB stick. When the keys flash select F12 for the rEFind boot menu. Select dragonflybsd (no    icon 
-   yet). Check that the /etc/fstab file looks something like this. The drive ID will be different matching dmesg.
+   yet). Login as root and check that the /etc/fstab file looks something like this. The drive ID will be different matching dmesg.
    
    ```
    serno/210602802831.s5a		/boot	ufs	rw	1	1
@@ -156,7 +156,7 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
 
 8) Provision Ethernet networking. Be sure to connect the RJ-45 Ethernet port on the laptop to a work/home switch/router running DHCP using a suitable cable.
 
-   At the command prompt type:
+   Login as root and at the command prompt type:
    ```
    ifconfig -a
    ```
@@ -303,7 +303,7 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
 
 11) Provision audio and check the default audio device.
 
-    At the command prompt type:
+    Login as root and at the command prompt type:
 
     ```
     cat /dev/sndstat
