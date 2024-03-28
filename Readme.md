@@ -425,7 +425,7 @@ Name this file "80-shutdown-rules" (the number is not important but the filename
 
 14) Miscellaneous.
 >[!Note]
-> Todo: camera for work teleconferencing. Suspend/resume nice to have but not critical.
+> Todo: camera for work teleconferencing, suspend/resume.
 >
 > Oracle Java for EDA tools (AMD/Xilinx, Intel/Altera, Synopsys/Cadence/Siemens, etc).
 >
@@ -435,9 +435,9 @@ Name this file "80-shutdown-rules" (the number is not important but the filename
 >[!Tip]
 > <ins>October 2023/March 2024 *BSD/Linux tested on Acer Nitro 515-51-XXX series laptops running Intel.</ins>
 >
-> <ins>Openbsd 7.4:</ins> supports WiFi and Intel -P GT2 Iris Xe Graphics using drm. Nearly everything is functional (no camera) including iic mousepad, except suspend/resume. Likely a configuration issue. No Oracle Java.
+> <ins>Openbsd 7.4:</ins> supports WiFi (iwx) and Intel -P GT2 Iris Xe Graphics using drm. Nearly everything is functional (no camera) including iic mousepad, except suspend/resume. Likely a configuration issue. No Oracle Java.
 >
-> <ins>Freebsd 14-stable/15-current:</ins> supports WiFi and Intel -P GT2 Iris Xe Graphics using drm-61-kmod. Wifi is problematic sometimes hanging the system and/or dropping connections. Freebsd 14-release (or less) does not support Intel WiFi or Graphics on this platform. Suspend/resume is nonfunctional as is iic mousepad (use psm instead). No Oracle Java.
+> <ins>Freebsd 14-stable/15-current:</ins> supports WiFi and Intel -P GT2 Iris Xe Graphics using drm-61-kmod. Wifi (iwlwifi) is problematic sometimes hanging the system and/or dropping connections. Freebsd 14-release (or less) does not support Intel WiFi or Graphics on this platform. Suspend/resume is nonfunctional as is iic mousepad (use psm instead). No Oracle Java.
 >
 > <ins>Ubuntu 22.04/23.10:</ins> everything is functional (update usb file and recompile module for camera) including iic mousepad and EDA tools based on Oracle Java.
 
