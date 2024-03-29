@@ -109,7 +109,7 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
    https://www.dragonflybsd.org/docs/handbook/Installation/#index6h1
    ```
 
-   While the EFI partion is still mounted, add the DragonflyBSD icon to the rEFind boot menu. Add the text below to the refind.conf file. At       the command prompt type:
+   While the EFI partion is still mounted, add the DragonflyBSD icon to the rEFind boot menu. Insert the text below in the refind.conf file. At       the command prompt type:
    ```
    vi refind.conf
    ```
