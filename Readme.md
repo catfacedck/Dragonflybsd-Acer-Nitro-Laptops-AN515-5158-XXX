@@ -23,8 +23,8 @@ These laptops typically come in a variety of hardware sku configurations:
     drives, USB.
 
 **What does not work:**
-  - Intel integrated WiFi, Killer WiFi, Intel integrated Graphics (no drm-61-kmod -> no brightness/screen resolution control), Nvidia Graphics, 
-    suspend/sleep keys, camera, bluetooth, microSDTM Card Reader.
+  - Intel integrated WiFi (Killer WiFi), Intel integrated Graphics (no drm-61-kmod -> no brightness/screen resolution control), Nvidia Graphics, 
+    suspend/sleep keys, Mediatek WiFi, camera, bluetooth, microSDTM Card Reader.
 
 >[!Note]
 >This dragonfly installation was tested on Intel I5-12500 and Intel I7-12650 systems with Integrated Intel Graphics/Wifi, Nvidia 3050/4050 Graphics, and Killer Ethernet E2600.
@@ -91,9 +91,9 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
    dmesg|less
    ```
 
-   <ins>Inspect the messages to ensure Ethernet was detected as well as the mousepad and audio. One must have Ethernet with the corresponding driver to continue 	with the installation. The Ethernet hardware is attached to the pci bus. To view all the pci devices and their driver attachments.</in>
-   
-   At the command prompt type:
+   <ins>Inspect the messages to ensure Ethernet was detected as well as the mousepad and audio. One must have Ethernet with the corresponding driver to continue 	with the installation as the Ethernet hardware is attached to the pci bus.</ins>
+
+   To view all the pci devices and their driver attachments - at the command prompt type:
    ```
    pciconf -lvv|less
    ```
@@ -102,7 +102,7 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
    Ethernet (re0 or other), mousepad (psm0), and audio (hdaa/hdacc) should have been detected.
    
 
-6) Install drangonflybsd from the USB stick assumping the entire 2nd drive is used. Follow the directions here:
+7) Install drangonflybsd from the USB stick assumping the entire 2nd drive is used. Follow the directions here:
    
    Setup rEFind and drive partitions. Read this section carefully.
    ```
@@ -455,7 +455,7 @@ This installs _lsusb_ together with a few other utilities useful for developmen/
 
 
 >[!Tip]
-> <ins>October 2023/March 2024 *BSD/Linux tested on Acer Nitro 515-51-XXX series laptops running Intel.</ins>
+> <ins>October 2023/March 2024 *BSD/Linux tested on Acer Nitro 515-51/58-XXX series laptops running Intel.</ins>
 >
 > <ins>Openbsd 7.4:</ins> supports WiFi (iwx) and Intel -P GT2 Iris Xe Graphics using drm. Nearly everything is functional (no camera) including iic mousepad, suspend/resume closing the display lid is functional, except key suspend/resume. Likely a configuration issue. No Oracle Java.
 >
