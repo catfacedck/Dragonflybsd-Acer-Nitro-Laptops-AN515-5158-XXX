@@ -93,7 +93,7 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
 
    <ins>Inspect the messages to ensure Ethernet was detected as well as the mousepad and audio. One must have Ethernet with the corresponding driver to continue 	with the installation as the Ethernet hardware is attached to the pci bus.</ins>
 
-   To view all the pci devices and their driver attachments - at the command prompt type:
+   View all the pci devices and their driver attachments. At the command prompt type:
    ```
    pciconf -lvv|less
    ```
