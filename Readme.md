@@ -98,7 +98,7 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
    pciconf -lvv|less
    ```
    
-   No pci driver available is indicted by "none"
+   No pci driver available is indicted by "none".
    Ethernet (re0 or other), mousepad (psm0), and audio (hdaa/hdacc) should have been detected.
    
 
