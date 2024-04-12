@@ -245,7 +245,7 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
     https://www.dragonflybsd.org/docs/handbook/ConfigureKernel/
     
 
-11) Provision Xorg. Add the following content to /etc/sysctl.conf, /boot/loader.conf, and /etc/rc.conf .
+11) Provision Xorg. Add the following content to /etc/sysctl.conf, /boot/loader.conf, and /etc/rc.conf.
 
     /etc/sysctl.conf
     ```
