@@ -411,7 +411,7 @@ Here the assumption is _at least_ two (2) drives: 1 with Windows 11 and 1 with d
     ![Screenshot_elephant](https://github.com/catfacedck/Dragonflybsd-on-Acer-Nitro-Laptop-AN515-51-XXX/assets/42676711/e7455ab5-352c-427b-8193-e0bb13a16dfc)
 
 
-14) Provision _polkit_ so the *Shutdown* and *Log Out* menus may be used from xfce4. Add the following file to /usr/local/etc/polkit-1/rules directory.
+14) Provision _polkit_ so the *Shutdown* and *Log Out* menus may be used from xfce4. Add to the _50-default.rules_ file in the /usr/local/etc/polkit-1/rules directory.
 
    ```
 polkit.addRule(function (action, subject) {
@@ -429,7 +429,7 @@ polkit.addRule(function (action, subject) {
   }
 });
    ```
-Name this file "80-shutdown-rules" (the number is not important but the filename must end with "rules"). The USER (elephant) here must be a member of the
+Any other _rules_ file created in this directory is removed upon reboot. The USER (elephant) here must be a member of the
 "operator" group in /etc/group.
    
    
