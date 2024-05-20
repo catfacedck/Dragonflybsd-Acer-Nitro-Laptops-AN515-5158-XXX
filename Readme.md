@@ -449,7 +449,7 @@ This installs _lsusb_ together with a few other utilities useful for developmen/
 >[!Note]
 > Todo: camera for work teleconferencing, suspend/resume.
 >
-> Oracle Java for EDA tools (AMD/Xilinx, Intel/Altera, Synopsys/Cadence/Siemens, etc).
+> EDA tools (AMD/Xilinx, Intel/Altera, Synopsys/Cadence/Siemens, etc).
 >
 > WiFi and drm i915 Intel -P GT2 Iris Xe Graphics.
 
@@ -457,11 +457,11 @@ This installs _lsusb_ together with a few other utilities useful for developmen/
 >[!Tip]
 > <ins>October 2023/March 2024 *BSD/Linux tested on Acer Nitro 515-51/58-XXX series laptops running Intel.</ins>
 >
-> <ins>Openbsd 7.4/7.5:</ins> supports WiFi (iwx) and Intel -P GT2 Iris Xe Graphics using drm. Nearly everything is functional: including iic mousepad, camera, suspend/resume closing the display lid is functional, except key suspend/resume. Likely a configuration issue. No Oracle Java.
+> <ins>Openbsd 7.4/7.5:</ins> supports WiFi (iwx) and Intel -P GT2 Iris Xe Graphics using drm. Nearly everything is functional: including iic mousepad, camera (after patching uvideo), suspend/resume closing the display lid is functional, except key suspend/resume. Likely a configuration issue. EDA tools (Intel Quartus/Questa, Xilinx Vivado) non-functional.
 >
-> <ins>Freebsd 14-stable/15-current:</ins> supports WiFi and Intel -P GT2 Iris Xe Graphics using drm-61-kmod. Wifi (iwlwifi) is problematic sometimes hanging the system and/or dropping connections. Freebsd 14-release (or less) does not support Intel WiFi or Graphics on this hardware platform. Nearly everything is functional: including iic mousepad, camera functional after patching webcamd usb/uvc. Key suspend/resume is nonfunctional. No Oracle Java.
+> <ins>Freebsd 14-stable/15-current:</ins> supports WiFi and Intel -P GT2 Iris Xe Graphics using drm-61-kmod or later. Wifi (iwlwifi) is sometimes problematic requiring a reboot. Freebsd 14-release (or less) does not support Intel WiFi or Intel Graphics on this hardware platform. Nearly everything is functional: including iic mousepad, camera functional after patching webcamd usb/uvc. Key suspend/resume is nonfunctional. EDA tools (Intel Quartus/Questa, Xilinx Vivado) non-functional.
 >
-> <ins>Ubuntu 22.04/23.10:</ins> nearly everything is functional including iic mousepad and EDA tools based on Oracle Java. Camera functional after patching usb/uvc.
+> <ins>Ubuntu 24.04:</ins> nearly everything is functional including iic mousepad and EDA tools (Intel Quartus/Questa, Xilinx Vivado). Camera functional after patching usb/uvc.
 
     
 
