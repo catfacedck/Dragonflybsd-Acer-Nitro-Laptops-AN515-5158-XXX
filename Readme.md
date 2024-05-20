@@ -462,6 +462,8 @@ This installs _lsusb_ together with a few other utilities useful for developmen/
 > <ins>Freebsd 14-stable/15-current:</ins> supports WiFi and Intel -P GT2 Iris Xe Graphics using drm-61-kmod or later. Wifi (iwlwifi) is sometimes problematic requiring a reboot. Freebsd 14-release (or less) does not support Intel WiFi or Intel Graphics on this hardware platform. Nearly everything is functional: including iic mousepad, camera functional after patching webcamd usb/uvc. Key suspend/resume is nonfunctional. EDA tools (Intel Quartus/Questa, Xilinx Vivado) non-functional.
 >
 > <ins>Ubuntu 24.04:</ins> nearly everything is functional including iic mousepad and EDA tools (Intel Quartus/Questa, Xilinx Vivado). Camera functional after patching usb/uvc.
+>
+> <ins>openSUSE Tumbleweed:</ins> nearly everything is functional including iic mousepad and EDA tools (Intel Quartus/Questa, Xilinx Vivado). Camera functional after patching usb/uvc.
 
     
 
