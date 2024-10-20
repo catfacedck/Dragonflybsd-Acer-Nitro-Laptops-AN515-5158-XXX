@@ -23,8 +23,8 @@ These laptops typically come in a variety of hardware sku configurations:
     drives, USB.
 
 **What does not work:**
-  - Intel integrated WiFi (Killer WiFi), Intel integrated Graphics (no drm-61-kmod -> no brightness/screen resolution control), Nvidia Graphics, 
-    suspend/sleep keys, Mediatek WiFi, camera, bluetooth, microSDTM Card Reader.
+  - Intel integrated WiFi (Killer WiFi), Intel integrated Graphics (no drm-61+kmod -> no brightness/screen resolution control), Nvidia Graphics, 
+    suspend/sleep keys, Mediatek WiFi, camera, bluetooth, microSDTM Card Reader. Intel core specific modules are non-functional (e.g. coretemp).
 
 >[!Note]
 >This dragonfly installation was tested on Intel I5-12500 and Intel I7-12650 systems with Integrated Intel Graphics/Wifi, Nvidia 3050/4050 Graphics, and Killer Ethernet E2600.
@@ -457,7 +457,7 @@ This installs _lsusb_ together with a few other utilities useful for developmen/
 >[!Tip]
 > <ins>October 2023/March 2024 *BSD/Linux tested on Acer Nitro 515-51/58-XXX series laptops running Intel.</ins>
 >
-> <ins>Openbsd 7.4/7.5:</ins> supports WiFi (iwx) and Intel -P GT2 Iris Xe Graphics using drm. Nearly everything is functional: including iic mousepad, camera (after patching uvideo), suspend/resume closing the display lid is functional, except key suspend/resume. Likely a configuration issue. EDA tools (Intel Quartus/Questa, Xilinx Vivado) non-functional.
+> <ins>Openbsd 7.4/7.5/7.6:</ins> supports WiFi (iwx) and Intel -P GT2 Iris Xe Graphics using drm. Nearly everything is functional: including iic mousepad, camera (after patching uvideo), suspend/resume closing the display lid is functional, except key suspend/resume. Likely a configuration issue. EDA tools (Intel Quartus/Questa, Xilinx Vivado) non-functional.
 >
 > <ins>Freebsd 14-stable/15-current:</ins> supports WiFi and Intel -P GT2 Iris Xe Graphics using drm-61-kmod or later. Wifi (iwlwifi) is sometimes problematic requiring a reboot. Freebsd 14-release (or less) does not support Intel WiFi or Intel Graphics on this hardware platform. Nearly everything is functional: including iic mousepad, camera functional after patching webcamd usb/uvc. Key suspend/resume is nonfunctional. EDA tools (Intel Quartus/Questa, Xilinx Vivado) non-functional.
 >
