@@ -465,9 +465,6 @@ This installs _lsusb_ together with a few other utilities useful for developmen/
 >
 > <ins>openSUSE Tumbleweed:</ins> nearly everything is functional including iic mousepad and EDA tools (Intel Quartus/Questa, Xilinx Vivado). Camera functional after patching usb/uvc.
 >
->![1](https://github.com/user-attachments/assets/53138e59-2903-4e3d-bff8-293269955262)
->
->![2](https://github.com/user-attachments/assets/4d86a743-22d0-4ba1-86ec-a8a249d6b14f)
 
 
 
